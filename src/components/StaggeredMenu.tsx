@@ -2,6 +2,7 @@
 import React, { useCallback, useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import "./StaggeredMenu.css";
+import Image from "next/image";
 
 export interface StaggeredMenuItem {
   label: string;
@@ -451,14 +452,17 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         aria-label="Main navigation header"
       >
         <div className="sm-logo" aria-label="Logo">
-          <img
-            src={"/image.png"}
+          <Image
+            src={"/defy26.png"}
             alt="Logo"
-            className="sm-logo-img"
             draggable={false}
-            width={180}
-            height={200}
+            width={80}
+            height={80}
           />
+          <div className="flex items-center space-x-2">
+            <span className="text-xl font-bold text-foreground">DEFY</span>
+            <span className="text-xl font-bold text-primary">26</span>
+          </div>
         </div>
         <button
           ref={toggleBtnRef}

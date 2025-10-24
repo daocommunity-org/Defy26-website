@@ -28,7 +28,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2em;
+  padding: 1em 2em;
   background: transparent;
   pointer-events: none;
   z-index: 20;
@@ -46,7 +46,7 @@
 
 .sm-logo-img {
   display: block;
-  height: 60px;
+  height: 45px;
   width: auto;
   object-fit: contain;
 }
@@ -360,10 +360,6 @@
     left: 0;
     right: 0;
   }
-
-  .staggered-menu-wrapper[data-open] .sm-logo-img {
-    filter: invert(100%);
-  }
 }
 
 @media (max-width: 640px) {
@@ -371,9 +367,5 @@
     width: 100%;
     left: 0;
     right: 0;
-  }
-
-  .staggered-menu-wrapper[data-open] .sm-logo-img {
-    filter: invert(100%);
   }
 }
