@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Bungee } from "next/font/google";
+import { Geist, Geist_Mono, Bungee, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -20,6 +20,12 @@ const bungee = Bungee({
   subsets: ["latin"],
 });
 
+const bebasNeue = Bebas_Neue({
+  weight: "400",
+  variable: "--font-bebas-neue",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Defy 26",
   description:
@@ -34,7 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${bungee.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${bungee.variable} ${bebasNeue.variable} antialiased`}
       >
         <ReactLenis root />
         <Navbar />

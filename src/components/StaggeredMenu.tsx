@@ -460,8 +460,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             height={80}
           />
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-foreground">DEFY</span>
-            <span className="text-xl font-bold text-primary">26</span>
+            <span className="text-2xl  text-foreground">DEFY</span>
+            <span className="text-2xl  text-primary">26</span>
           </div>
         </div>
         <button
@@ -515,7 +515,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     aria-label={it.ariaLabel}
                     data-index={idx + 1}
                   >
-                    <span className="sm-panel-itemLabel">{it.label}</span>
+                    <span className="sm-panel-itemLabel text-foreground hover:text-primary">{it.label}</span>
                   </a>
                 </li>
               ))

@@ -4,7 +4,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-bungee);
+  --font-sans: var(--font-bebas-neue);
   --font-mono: var(--font-bungee);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -74,7 +74,7 @@
   --sidebar-accent-foreground: #ffffff;
   --sidebar-border: #222222;
   --sidebar-ring: #39ff14;
-  --font-sans: "Arial", sans-serif;
+  --font-sans: var(--font-bebas-neue), sans-serif;
   --font-serif: "Georgia", serif;
   --font-mono: "Courier New", monospace;
   --radius: 0.5rem;
@@ -107,6 +107,10 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-bungee), sans-serif;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 }
 
@@ -150,4 +154,20 @@
 
 .navbar-container > * {
   pointer-events: auto;
+}
+
+/* Navbar link colors: default foreground, on hover primary */
+.sm-panel-item,
+.sm-socials-link,
+nav a,
+.navbar-container a {
+  color: var(--foreground);
+  transition: color 0.18s ease;
+}
+
+.sm-panel-item:hover,
+.sm-socials-link:hover,
+nav a:hover,
+.navbar-container a:hover {
+  color: var(--primary);
 }
