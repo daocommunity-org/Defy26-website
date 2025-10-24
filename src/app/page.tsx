@@ -1,3 +1,5 @@
+import Sponsors from "@/components/Sponsors";
+
 export default function Home() {
   return (
     <>
@@ -9,6 +11,7 @@ export default function Home() {
           Some Content Comes Here{" "}
         </h1>
       </div>
+      <Sponsors />
     </>
   );
 }

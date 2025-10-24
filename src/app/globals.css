@@ -43,7 +43,7 @@
 
 :root {
   --background: #000000;
-  --foreground: #ffffff;
+  --foreground: #0cff00;
   --card: #0a0a0a;
   --card-foreground: #ffffff;
   --popover: #000000;
@@ -148,4 +148,93 @@
 
 .navbar-container > * {
   pointer-events: auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem; 
+  font-weight: bold;
+  margin-bottom: 60px; 
+  color: #0cff00;
+  text-transform: uppercase; 
+  letter-spacing: 2px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 80px; 
+  height: 4px;
+  background-color: #0cff00; 
+  border-radius: 2px;
+}
+
+.sponsors-section {
+  padding: 80px 0; 
+  overflow: hidden; 
+}
+
+.sponsor-scroll-container {
+  width: 100%;
+  max-width: 1200px; 
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.sponsor-scroll-content {
+  display: flex;
+  width: max-content;    
+  flex-wrap: nowrap;
+  animation: infinite-scroll 20s linear infinite; 
+  padding: 20px 0; 
+  will-change: transform;
+}
+
+.sponsor-item {
+  position: relative;
+  flex-shrink: 0; 
+  width: 300px; 
+  height: 190px; 
+  margin: 0 30px; 
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.05); 
+  border-radius: 8px; 
+  overflow: hidden; 
+  transition: all 0.3s ease;
+  filter: grayscale(100%) brightness(150%) opacity(0.8); 
+}
+
+.sponsor-item:hover {
+  filter: grayscale(0%) brightness(100%) opacity(1) drop-shadow(0 0 10px #0cff00); 
+  transform: scale(1.05); 
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+@keyframes infinite-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  .sponsor-item {
+    width: 180px;
+    height: 70px;
+    margin: 0 15px;
+  }
+  .sponsor-scroll-content {
+    animation: infinite-scroll 25s linear infinite; 
+  }
 }
