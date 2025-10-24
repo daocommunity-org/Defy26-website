@@ -1,6 +1,8 @@
+import Sponsors from "@/components/Sponsors";
 import SubHero from "@/components/subHero";
 import { HyperText } from "@/components/ui/hyper-text";
 import { tr } from "framer-motion/client";
+
 export default function Home() {
   return (
     <>
@@ -11,6 +13,7 @@ export default function Home() {
           <h1 className="text-5xl text-accent">Note:video</h1>
         </div>
       </section>
+
       <section id="sub-hero" className="min-h-screen ">
         <div className="h-full w-full flex items-center justify-center">
           <div className="flex items-center justify-center w-full min-h-screen bg-gray-100 dark:bg-black p-4">
@@ -46,21 +49,16 @@ export default function Home() {
             </div>
           </div>
         </div>
-        {/* <h1 className="font-bold text-6xl text-primary">Sub Section</h1> */}
       </section>
+
       <section
         id="timeline"
         className="min-h-screen flex items-center justify-center"
       >
         <h1 className="font-bold text-6xl text-primary">Timeline Section</h1>
       </section>
-
-      <section
-        id="sponsors"
-        className="min-h-screen flex items-center justify-center"
-      >
-        <h1 className="font-bold text-6xl text-primary">Sponsors Section</h1>
-      </section>
+      
+      <Sponsors />
 
       <section
         id="faqs"
@@ -78,3 +76,4 @@ export default function Home() {
     </>
   );
 }
+ 
