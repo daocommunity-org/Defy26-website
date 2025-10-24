@@ -460,8 +460,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             height={80}
           />
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-foreground">DEFY</span>
-            <span className="text-xl font-bold text-primary">26</span>
+            <span className="text-2xl  text-foreground">DEFY</span>
+            <span className="text-2xl  text-primary">26</span>
           </div>
         </div>
         <button

@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <section className="min-h-screen flex items-center justify-center">
         <div>
-          <h1 className="font-bold text-6xl text-primary  ">Defy 26 Website</h1>
+          <h1 className=" text-6xl text-primary  ">Defy 26 Website</h1>
           <br />
           <h1 className="text-5xl text-accent">Note:video</h1>
         </div>
