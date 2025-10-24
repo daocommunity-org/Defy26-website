@@ -95,7 +95,7 @@ const Footer = () => {
       </div>
 
       {/* Accent Line */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent"></div>
+      <div className="h-1 bg-linear-to-r from-transparent via-primary to-transparent"></div>
     </footer>
   );
 };
