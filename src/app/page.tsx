@@ -11,15 +11,12 @@ export default function Home() {
           <h1 className="text-5xl text-accent">Note:video</h1>
         </div>
       </section>
-      <section
-        id="tracks"
-        className="min-h-screen flex items-center justify-center"
-      >
+      <section id="tracks" className="h-full flex items-center justify-center">
         <CategoryListDemo />
       </section>
       <section
         id="timeline"
-        className="min-h-screen"
+        className="h-full flex items-center justify-center"
       >
         <RadialOrbitalTimeline />
       </section>
