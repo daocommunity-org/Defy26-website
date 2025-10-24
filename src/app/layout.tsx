@@ -23,7 +23,7 @@ const bungee = Bungee({
 export const metadata: Metadata = {
   title: "Defy 26",
   description:
-    "DeFy'24 stands out from typical college hackathons by prioritizing fresh product ideas in the Web3 space. We're on the lookout for innovative startup concepts that leverage Web3 technology, emphasizing a future where 'decentralization' and 'future yield' coexist.",
+    "DeFy'26 stands out from typical college hackathons by prioritizing fresh product ideas in the Web3 space. We're on the lookout for innovative startup concepts that leverage Web3 technology, emphasizing a future where 'decentralization' and 'future yield' coexist.",
 };
 
 export default function RootLayout({

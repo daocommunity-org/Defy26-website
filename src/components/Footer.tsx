@@ -1,103 +1,83 @@
-"use client";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
+
+import { MapPin, Linkedin, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const footerLinks = {
-    company: [
-      { name: "About", href: "/about" },
-      { name: "Services", href: "/services" },
-      { name: "Contact", href: "/contact" },
-    ],
-    social: [
-      { name: "Twitter", href: "https://twitter.com" },
-      { name: "GitHub", href: "https://github.com" },
-      { name: "LinkedIn", href: "https://linkedin.com" },
-    ],
-  };
-
   return (
-    <footer className="bg-card border-t border-border">
-      <div className="container mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Brand Section */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <span className="text-3xl font-bold text-primary">DEFY</span>
-              <span className="text-3xl font-bold text-foreground">26</span>
+    <footer className="bg-[#111111] border-t-2 border-primary text-[#ccff99] py-16 px-6 md:px-12">
+      <div className="container mx-auto">
+        <div className="flex flex-col md:flex-row justify-between gap-12">
+          
+          <div className="flex flex-col justify-between space-y-8 md:w-1/2">
+            <p className="text-4xl md:text-5xl text-white font-medium leading-tight">
+              <span className="text-primary">Building</span> the
+              <br />
+              future, one
+              <br />
+              line at a time.
+            </p>
+
+            <div className="relative w-200 h-84">
+              <Image
+                src="/clubs.svg"
+                alt="BIC and Defy 26 Logo"
+                fill 
+                style={{ objectFit: "contain", objectPosition: "left" }}
+              />
             </div>
-            <p className="text-muted-foreground text-sm">
-              Building the future, one line at a time.
+          </div>
+
+          <div className="flex flex-col space-y-8 md:w-1/2"> 
+            <div className="flex items-start space-x-3 text-left max-w-4xl">
+              <MapPin className="w-12 h-12 text-primary flex-shrink-0 mt-1" />
+              <span className="text-3xl"> 
+                Vellore Institute of Technology, Vandalur - Kelambakkam Road,
+                Chennai, Tamil Nadu - 600 127
+              </span>
+            </div>
+
+            <a
+              href="https://www.linkedin.com/company/daovitcc/"
+              target="_blank"
+              className="flex items-center space-x-3 hover:text-primary transition-colors"
+            >
+              <Linkedin className="w-10 h-10 text-primary" />
+              <span className="text-3xl">DeFy26's LinkedIn</span>
+            </a>
+
+            <a
+              href="https://www.instagram.com/defy.26/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-3 hover:text-primary transition-colors"
+            >
+              <Instagram className="w-10 h-10 text-primary" />
+              <span className="text-3xl">DeFy26's Instagram</span> 
+            </a>
+
+            <a
+              href="https://twitter.com" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-3 hover:text-primary transition-colors"
+            >
+              <Twitter className="w-10 h-10 text-primary" /> 
+              <span className="text-3xl">DeFy26's Twitter</span> 
+            </a>
+
+            <p className="text-base text-[#ccff99]">
+              © Copyright {currentYear}. All rights reserved.
             </p>
           </div>
 
-          {/* Company Links */}
-          <div className="space-y-4">
-            <h3 className="text-foreground font-semibold text-lg">Company</h3>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Social Links */}
-          <div className="space-y-4">
-            <h3 className="text-foreground font-semibold text-lg">Follow Us</h3>
-            <ul className="space-y-2">
-              {footerLinks.social.map((link) => (
-                <li key={link.name}>
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-muted-foreground text-sm">
-              © {currentYear} Defy26. All rights reserved.
-            </p>
-            <div className="flex space-x-6">
-              <Link
-                href="/privacy"
-                className="text-muted-foreground hover:text-primary text-sm transition-colors duration-300"
-              >
-                Privacy Policy
-              </Link>
-              <Link
-                href="/terms"
-                className="text-muted-foreground hover:text-primary text-sm transition-colors duration-300"
-              >
-                Terms of Service
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
-
-      {/* Accent Line */}
-      <div className="h-1 bg-linear-to-r from-transparent via-primary to-transparent"></div>
     </footer>
   );
 };
 
 export default Footer;
+
