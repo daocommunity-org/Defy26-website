@@ -515,7 +515,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     aria-label={it.ariaLabel}
                     data-index={idx + 1}
                   >
-                    <span className="sm-panel-itemLabel">{it.label}</span>
+                    <span className="sm-panel-itemLabel text-foreground hover:text-primary">{it.label}</span>
                   </a>
                 </li>
               ))
