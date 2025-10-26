@@ -323,7 +323,7 @@ const component = ({
   );
 
   return (
-    <CanvasWrapper >
+    <CanvasWrapper>
       <group rotation={[0, 0, degToRad(rotation)]}>
         <NoisePlanes
           material={beamMaterial}
