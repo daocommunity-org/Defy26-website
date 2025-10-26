@@ -39,16 +39,24 @@ const faqData: FaqItem[] = faqQuestions.map((question, index) => {
 const FaqItemComponent: React.FC<{ item: FaqItem }> = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  // Helper function to toggle the state
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <div className="faq-item" data-open={isOpen}>
-      <div className="faq-question" onClick={() => setIsOpen(!isOpen)}>
+      {/* Click handler on the question */}
+      <div className="faq-question" onClick={toggleOpen}>
         <h2>{item.question}</h2>
         <span>{isOpen ? '−' : '+'}</span>
       </div>
 
-       <div className="faq-answer">
-         <p>{item.answer}</p>
-       </div>
+       {/* --- ADDED CLICK HANDLER HERE --- */}
+       {/* Now clicking the answer area will also close it */}
+      <div className="faq-answer" onClick={toggleOpen}>
+        <p>{item.answer}</p>
+      </div>
     </div>
   );
 };
@@ -64,3 +72,4 @@ export const Faqs: React.FC = () => {
     </section>
   );
 };
+

@@ -4,8 +4,6 @@ import { tr } from "framer-motion/client";
 import { Faqs } from "@/components/Faqs";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import CategoryListDemo from "@/components/demo/category-list-demo";
-import SubHero from "@/components/subHero";
-import { HyperText } from "@/components/ui/hyper-text";
 
 export default function Home() {
   return (
