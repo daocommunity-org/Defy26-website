@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bungee, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+
 import ReactLenis from "lenis/react";
+import { Footer } from "@/components/footer-taped-design";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
