@@ -62,7 +62,7 @@ export default function Home() {
 
       <section id="sub-hero" className="min-h-screen ">
         <div className="h-full w-full flex items-center justify-center">
-          <div className="flex items-center justify-center w-full min-h-screen bg-gray-100 dark:bg-black p-4">
+          <div className="flex items-center justify-center w-full min-h-screen bg-black p-4">
             <div className="w-full h-screen relative">
               <SubHero
                 beamWidth={2}
