@@ -1,18 +1,62 @@
+"use client";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import CategoryListDemo from "@/components/demo/category-list-demo";
 import SubHero from "@/components/subHero";
 import { HyperText } from "@/components/ui/hyper-text";
 
+import PromptingIsAllYouNeed from "@/components/animated-hero-section";
+import {
+  ContainerAnimated,
+  ContainerInset,
+  ContainerScroll,
+  ContainerSticky,
+  HeroButton,
+  HeroVideo,
+} from "@/components/animated-video-on-scroll";
+
 export default function Home() {
   return (
     <>
-      <section className="min-h-screen flex items-center justify-center">
-        <div>
-          <h1 className=" text-6xl text-primary  ">Defy 26 Website</h1>
-          <br />
-          <h1 className="text-5xl text-accent">Note:video</h1>
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
+        <PromptingIsAllYouNeed />
       </section>
+      <section>
+        <ContainerScroll className="h-[350vh]">
+          <ContainerSticky
+            style={{}}
+            className="bg-background px-4 py-10 sm:px-6 md:px-8 lg:px-12 text-foreground"
+          >
+            <ContainerAnimated className="space-y-6 text-center max-w-5xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
+                Defy the Ordinary
+              </h1>
+              <p className="mx-auto max-w-[42ch] text-base sm:text-lg md:text-xl text-muted-foreground mb-2">
+                Code. Create. Conquer. Join the Defy 26 Hackathon and push
+                innovation beyond limits.
+              </p>
+            </ContainerAnimated>
+
+            <ContainerInset className="max-h-[300px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px] w-full max-w-6xl mx-auto py-6 px-4 flex items-center justify-center">
+              <HeroVideo
+                src="bg-video.mp4"
+                data-src="bg-video.mp4"
+                className="rounded-xl border-2 border-primary/20 shadow-2xl shadow-primary/10 w-full h-full object-cover mx-auto"
+              />
+            </ContainerInset>
+            <ContainerAnimated
+              transition={{ delay: 0.4 }}
+              outputRange={[-120, 0]}
+              inputRange={[0, 0.7]}
+              className="mx-auto mt-6 w-fit"
+            >
+              <HeroButton className="bg-primary text-background hover:bg-primary/90 font-bold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50">
+                Join Now
+              </HeroButton>
+            </ContainerAnimated>
+          </ContainerSticky>
+        </ContainerScroll>
+      </section>
+
       <section id="sub-hero" className="min-h-screen ">
         <div className="h-full w-full flex items-center justify-center">
           <div className="flex items-center justify-center w-full min-h-screen bg-gray-100 dark:bg-black p-4">
