@@ -13,6 +13,8 @@ import {
   HeroButton,
   HeroVideo,
 } from "@/components/animated-video-on-scroll";
+import { Button } from "@/components/ui/button";
+import { GetStartedButton } from "@/components/ui/get-started-button";
 
 export default function Home() {
   return (
@@ -49,9 +51,7 @@ export default function Home() {
               inputRange={[0, 0.7]}
               className="mx-auto mt-6 w-fit"
             >
-              <HeroButton className="bg-primary text-background hover:bg-primary/90 font-bold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/50">
-                Join Now
-              </HeroButton>
+              <GetStartedButton />
             </ContainerAnimated>
           </ContainerSticky>
         </ContainerScroll>
