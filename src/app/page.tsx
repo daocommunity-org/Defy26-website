@@ -6,12 +6,42 @@ import { tr } from "framer-motion/client";
 export default function Home() {
   return (
     <>
-      <section className="min-h-screen flex items-center justify-center">
-        <div>
-          <h1 className="font-bold text-6xl text-primary  ">Defy 26 Website</h1>
-          <br />
-          <h1 className="text-5xl text-accent">Note:video</h1>
-        </div>
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
+        <PromptingIsAllYouNeed />
+      </section>
+      <section>
+        <ContainerScroll className="h-[350vh]">
+          <ContainerSticky
+            style={{}}
+            className="bg-background px-4 py-10 sm:px-6 md:px-8 lg:px-12 text-foreground"
+          >
+            <ContainerAnimated className="space-y-6 text-center max-w-5xl mx-auto">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
+                Defy the Ordinary
+              </h1>
+              <p className="mx-auto max-w-[42ch] text-base sm:text-lg md:text-xl text-muted-foreground mb-2">
+                Code. Create. Conquer. Join the Defy 26 Hackathon and push
+                innovation beyond limits.
+              </p>
+            </ContainerAnimated>
+
+            <ContainerInset className="max-h-[300px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px] w-full max-w-6xl mx-auto py-6 px-4 flex items-center justify-center">
+              <HeroVideo
+                src="bg-video.mp4"
+                data-src="bg-video.mp4"
+                className="rounded-xl border-2 border-primary/20 shadow-2xl shadow-primary/10 w-full h-full object-cover mx-auto"
+              />
+            </ContainerInset>
+            <ContainerAnimated
+              transition={{ delay: 0.4 }}
+              outputRange={[-120, 0]}
+              inputRange={[0, 0.7]}
+              className="mx-auto mt-6 w-fit"
+            >
+              <GetStartedButton />
+            </ContainerAnimated>
+          </ContainerSticky>
+        </ContainerScroll>
       </section>
 
       <section id="sub-hero" className="min-h-screen ">
@@ -53,26 +83,22 @@ export default function Home() {
 
       <section
         id="timeline"
-        className="min-h-screen flex items-center justify-center"
+        className="h-full flex items-center justify-center"
       >
-        <h1 className="font-bold text-6xl text-primary">Timeline Section</h1>
+        <RadialOrbitalTimeline />
       </section>
       
       <Sponsors />
 
       <section
         id="faqs"
-        className="min-h-screen flex items-center justify-center"
+        className="min-h-screen flex flex-col items-center justify-center p-4"
       >
-        <h1 className="font-bold text-6xl text-primary">FAQs Section</h1>
+        <h1 className="font-bold text-6xl text-primary mb-10">FAQs</h1>
+        <Faqs />
       </section>
 
-      <section
-        id="footer"
-        className="min-h-screen flex items-center justify-center"
-      >
-        <h1 className="font-bold text-6xl text-primary">Footer Section</h1>
-      </section>
+
     </>
   );
 }
