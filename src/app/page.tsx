@@ -1,9 +1,8 @@
 "use client";
-import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
-import CategoryListDemo from "@/components/demo/category-list-demo";
+
 import SubHero from "@/components/subHero";
 import { HyperText } from "@/components/ui/hyper-text";
-import { tr } from "framer-motion/client";
+
 import { Faqs } from "@/components/Faqs";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import CategoryListDemo from "@/components/demo/category-list-demo";
@@ -14,10 +13,10 @@ import {
   ContainerInset,
   ContainerScroll,
   ContainerSticky,
-  HeroButton,
+ 
   HeroVideo,
 } from "@/components/animated-video-on-scroll";
-import { Button } from "@/components/ui/button";
+
 import { GetStartedButton } from "@/components/ui/get-started-button";
 
 export default function Home() {
@@ -117,7 +116,7 @@ export default function Home() {
 
       <section
         id="faqs"
-        className="min-h-screen flex flex-col items-center justify-center p-4"
+        className=" flex flex-col items-center justify-center p-4"
       >
         <h1 className="font-bold text-6xl text-primary mb-10">FAQs</h1>
         <Faqs />
