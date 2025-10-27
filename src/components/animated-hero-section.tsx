@@ -3,10 +3,10 @@
 import { useEffect, useRef } from "react";
 
 const COLOR = "#39ff14";
-const HIT_COLOR = "#333333";
+const HIT_COLOR = "#FFFFFF";
 const BACKGROUND_COLOR = "#000000";
 const BALL_COLOR = "#FFFFFF";
-const PADDLE_COLOR = "#FFFFFF";
+const PADDLE_COLOR = "#000000";
 const LETTER_SPACING = 1;
 
 const PIXEL_MAP = {
