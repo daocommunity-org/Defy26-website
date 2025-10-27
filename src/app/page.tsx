@@ -3,6 +3,10 @@ import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import CategoryListDemo from "@/components/demo/category-list-demo";
 import SubHero from "@/components/subHero";
 import { HyperText } from "@/components/ui/hyper-text";
+import { tr } from "framer-motion/client";
+import { Faqs } from "@/components/Faqs";
+import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
+import CategoryListDemo from "@/components/demo/category-list-demo";
 
 import PromptingIsAllYouNeed from "@/components/animated-hero-section";
 import {
@@ -113,17 +117,13 @@ export default function Home() {
 
       <section
         id="faqs"
-        className="min-h-screen flex items-center justify-center"
+        className="min-h-screen flex flex-col items-center justify-center p-4"
       >
-        <h1 className="font-bold text-6xl text-primary">FAQs Section</h1>
+        <h1 className="font-bold text-6xl text-primary mb-10">FAQs</h1>
+        <Faqs />
       </section>
 
-      <section
-        id="footer"
-        className="min-h-screen flex items-center justify-center"
-      >
-        <h1 className="font-bold text-6xl text-primary">Footer Section</h1>
-      </section>
+
     </>
   );
 }
