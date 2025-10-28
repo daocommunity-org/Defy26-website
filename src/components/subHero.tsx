@@ -20,7 +20,10 @@ type MaterialConfig = {
   vertex?: Record<string, string>;
   fragment?: Record<string, string>;
   material?: Partial<THREE.MeshStandardMaterialParameters>;
-  uniforms?: Record<string, any>;
+  uniforms?: Record<
+    string,
+    THREE.IUniform | number | THREE.Color | Record<string, unknown>
+  >;
 };
 
 interface ComponentProps {
@@ -94,8 +97,10 @@ const extendMaterial = (
     uniforms: baseUniforms,
   } = physical;
   // 'defines' is not declared on ShaderLibShader in some @types/three versions,
-  // so cast to any to read it safely without a type error.
-  const baseDefines = (physical as any).defines ?? {};
+  // so cast to unknown first to safely access it.
+  const baseDefines =
+    (physical as unknown as { defines?: Record<string, unknown> }).defines ??
+    {};
   const uniforms = THREE.UniformsUtils.clone(baseUniforms);
   const defaults = new BaseMaterial(cfg.material || {});
 
@@ -254,7 +259,7 @@ const NoisePlanes = forwardRef<THREE.Mesh, NoisePlanesProps>(
 );
 NoisePlanes.displayName = "NoisePlanes";
 
-const component = ({
+const Component = ({
   beamWidth = 2,
   beamHeight = 15,
   beamNumber = 12,
@@ -340,4 +345,4 @@ const component = ({
   );
 };
 
-export default component;
+export default Component;

@@ -30,7 +30,7 @@ const transitionVariants = {
       filter: "blur(0px)",
       y: 0,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         bounce: 0.3,
         duration: 1.5,
       },
@@ -38,9 +38,14 @@ const transitionVariants = {
   },
 };
 
-export function CurrentSponsors({ sponsors = [], className }: CurrentSponsorsProps) {
+export function CurrentSponsors({
+  sponsors = [],
+  className,
+}: CurrentSponsorsProps) {
   return (
-    <section className={`bg-background pb-16 pt-16 md:pb-32 ${className ?? ""}`}>
+    <section
+      className={`bg-background pb-16 pt-16 md:pb-32 ${className ?? ""}`}
+    >
       <div className="group relative m-auto max-w-5xl px-6">
         <AnimatedGroup
           variants={{
@@ -60,12 +65,14 @@ export function CurrentSponsors({ sponsors = [], className }: CurrentSponsorsPro
             <Link
               href={logo.href}
               key={index}
-              className="group flex h-[100px] items-center justify-center rounded-lg p-4 transition-all duration-300 hover:outline hover:outline-2 hover:outline-offset-40 hover:outline-primary/70" 
+              className="group flex h-[100px] items-center justify-center rounded-lg p-4 transition-all duration-300 hover:outline-2 hover:outline-offset-40 hover:outline-primary/70"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image
-                className={`mx-auto h-auto w-fit max-h-[80px] max-w-[200px] object-contain sm:max-h-[100px] sm:max-w-[240px] ${logo.noInvert ? '' : 'dark:invert'} transition-transform duration-300 group-hover:scale-105`}
+                className={`mx-auto h-auto w-fit max-h-20 max-w-[200px] object-contain sm:max-h-[100px] sm:max-w-60 ${
+                  logo.noInvert ? "" : "dark:invert"
+                } transition-transform duration-300 group-hover:scale-105`}
                 src={logo.src}
                 alt={logo.alt}
                 height={logo.height}

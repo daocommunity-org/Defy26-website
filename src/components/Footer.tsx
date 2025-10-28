@@ -67,7 +67,7 @@ const Footer = () => {
 
             {/* Address */}
             <div className="flex items-start space-x-3 text-left max-w-4xl">
-              <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+              <MapPin className="w-6 h-6 text-primary shrink-0 mt-1" />
               <span className="text-muted-foreground">
                 Vellore Institute of Technology, Vandalur - Kelambakkam Road,
                 Chennai, Tamil Nadu - 600 127
