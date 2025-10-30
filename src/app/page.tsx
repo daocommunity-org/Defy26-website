@@ -18,7 +18,8 @@ import { CurrentSponsors } from "@/components/CurrentSponsors";
 import CommunitySponsors from "@/components/CommunitySponsors";
 import Image from "next/image";
 // 🎯 Import the new CountdownTimer component (assuming it's in components/)
-import CountdownTimer from "@/components/timercountdown"; 
+import CountdownTimer from "@/components/timercountdown";
+import { DefyInfoSection } from "@/components/HackathonShowcase";
 
 const currentSponsorLogosForGrid = [
   {
@@ -193,11 +194,11 @@ export default function Home() {
             style={{}}
             className="bg-background px-4 py-10 sm:px-6 md:px-8 lg:px-12 text-foreground"
           >
-            <ContainerAnimated className="space-y-6 text-center max-w-5xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter gap-3">
+            <ContainerAnimated className="space-y-4 md:space-y-6 text-center max-w-5xl mx-auto px-4">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight">
                 Defy <span className="text-primary"> The Limits </span>
               </h1>
-              <p className="mx-auto max-w-[42ch] text-base sm:text-lg md:text-xl text-muted-foreground mb-2">
+              <p className="mx-auto max-w-[42ch] text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-2">
                 Code. Create. Conquer. Join the Defy 26 Hackathon and push
                 innovation beyond limits.
               </p>
@@ -219,12 +220,14 @@ export default function Home() {
             </ContainerAnimated>
           </ContainerSticky>
         </ContainerScroll>
+        <section>
+          <DefyInfoSection />
+        </section>
 
         {/* 🚀 TIMER COUNTDOWN SECTION INSERTED HERE */}
-        <section id="timer-countdown" className="pt-0 md:pt-10">
+        <section id="timer-countdown" className="py-8 md:py-16">
           <CountdownTimer />
         </section>
-        
       </section>
       <section id="sub-hero" className="min-h-screen ">
         <div className="h-full w-full flex items-center justify-center">
@@ -240,19 +243,19 @@ export default function Home() {
                 scale={0.2}
                 rotation={0}
               />
-              <div className="absolute inset-0 flex items-center justify-center ">
-                <div className="flex justify-between w-xl">
+              <div className="absolute inset-0 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
                   <HyperText
                     animateOnHover={true}
                     startOnView={true}
-                    className="text-9xl text-foreground mr-4"
+                    className="text-6xl sm:text-8xl md:text-9xl lg:text-9xl text-foreground"
                   >
                     Defy
                   </HyperText>
                   <HyperText
                     animateOnHover={true}
                     startOnView={true}
-                    className="text-9xl text-primary "
+                    className="text-6xl sm:text-8xl md:text-9xl lg:text-9xl text-primary"
                   >
                     26
                   </HyperText>
@@ -272,35 +275,35 @@ export default function Home() {
         <RadialOrbitalTimeline />
       </section>
 
-      <section id="current-sponsors" className="py-20">
-        <h2 className="relative mb-16 text-center text-4xl font-bold uppercase tracking-wider text-primary md:text-5xl">
+      <section id="current-sponsors" className="py-12 md:py-20 px-4">
+        <h2 className="relative mb-8 md:mb-16 text-center text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wider text-primary">
           Current Sponsors
-          <span className="absolute -bottom-4 left-1/2 h-1 w-20 -translate-x-1/2 rounded-full bg-primary"></span>
+          <span className="absolute -bottom-2 md:-bottom-4 left-1/2 h-1 w-12 md:w-20 -translate-x-1/2 rounded-full bg-primary"></span>
         </h2>
         <CurrentSponsors sponsors={currentSponsorLogosForGrid} />
       </section>
 
-      <section id="community-sponsors" className="py-20">
-        <h2 className="relative mb-16 text-center text-4xl font-bold uppercase tracking-wider text-primary md:text-5xl">
+      <section id="community-sponsors" className="py-12 md:py-20 px-4">
+        <h2 className="relative mb-8 md:mb-16 text-center text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wider text-primary">
           Community Sponsors
-          <span className="absolute -bottom-4 left-1/2 h-1 w-20 -translate-x-1/2 rounded-full bg-primary"></span>
+          <span className="absolute -bottom-2 md:-bottom-4 left-1/2 h-1 w-12 md:w-20 -translate-x-1/2 rounded-full bg-primary"></span>
         </h2>
         <CommunitySponsors logos={communitySponsorLogos} columns={4} />
       </section>
 
-      <section id="previous-sponsors" className="py-20">
-        <h2 className="relative mb-16 text-center text-4xl font-bold uppercase tracking-wider text-primary md:text-5xl">
+      <section id="previous-sponsors" className="py-12 md:py-20 px-4">
+        <h2 className="relative mb-8 md:mb-16 text-center text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wider text-primary">
           Previous Year Sponsors
-          <span className="absolute -bottom-4 left-1/2 h-1 w-20 -translate-x-1/2 rounded-full bg-primary"></span>
+          <span className="absolute -bottom-2 md:-bottom-4 left-1/2 h-1 w-12 md:w-20 -translate-x-1/2 rounded-full bg-primary"></span>
         </h2>
-        <div className="flex flex-wrap justify-center gap-8 px-4">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-4">
           {previousSponsorLogos.map((logo, index) => (
             <a
               key={index}
               href={logo.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-20 w-32 items-center justify-center rounded-lg bg-card p-4 transition-transform hover:scale-105"
+              className="flex h-16 w-24 sm:h-20 sm:w-32 items-center justify-center rounded-lg bg-card p-2 sm:p-4 transition-transform hover:scale-105"
             >
               <Image
                 src={logo.src}
@@ -316,9 +319,11 @@ export default function Home() {
 
       <section
         id="faqs"
-        className=" flex flex-col items-center justify-center p-4"
+        className="flex flex-col items-center justify-center p-4 py-12 md:py-20"
       >
-        <h1 className="font-bold text-6xl text-primary mb-10">FAQs</h1>
+        <h1 className="font-bold text-4xl sm:text-5xl md:text-6xl text-primary mb-6 md:mb-10 text-center">
+          FAQs
+        </h1>
         <Faqs />
       </section>
     </>
