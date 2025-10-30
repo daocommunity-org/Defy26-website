@@ -3,7 +3,7 @@ import { ChevronRight } from "lucide-react";
 
 export function GetStartedButton() {
   return (
-    <Button className="group relative overflow-hidden" size="lg">
+    <Button className="group relative overflow-hidden my-5 lg:my-10" size="lg">
       <span className="mr-8 transition-opacity duration-500 group-hover:opacity-0">
         Register Now
       </span>

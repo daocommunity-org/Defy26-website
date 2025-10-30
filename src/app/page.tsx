@@ -182,9 +182,9 @@ const communitySponsorLogos = [
 export default function Home() {
   return (
     <>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
+      {/* <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
         <PromptingIsAllYouNeed />
-      </section>
+      </section> */}
       <section>
         <ContainerScroll className="h-[350vh]">
           <ContainerSticky
@@ -192,8 +192,8 @@ export default function Home() {
             className="bg-background px-4 py-10 sm:px-6 md:px-8 lg:px-12 text-foreground"
           >
             <ContainerAnimated className="space-y-6 text-center max-w-5xl mx-auto">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter">
-                Defy the Ordinary
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter gap-3">
+                Defy <span className="text-primary"> The Limits </span>
               </h1>
               <p className="mx-auto max-w-[42ch] text-base sm:text-lg md:text-xl text-muted-foreground mb-2">
                 Code. Create. Conquer. Join the Defy 26 Hackathon and push

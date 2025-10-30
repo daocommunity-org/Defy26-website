@@ -150,7 +150,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-family: var(--font-bungee), sans-serif;
+    font-family: var(--font-bebas-neue), sans-serif;
   }
   a {
     color: inherit;

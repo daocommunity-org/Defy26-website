@@ -17,7 +17,7 @@ const socialItems = [
 
 const Navbar = () => {
   return (
-    <nav className="navbar-container">
+    <nav className="navbar-container ">
       <StaggeredMenu
         position="right"
         items={menuItems}
