@@ -17,6 +17,8 @@ import { GetStartedButton } from "@/components/ui/get-started-button";
 import { CurrentSponsors } from "@/components/CurrentSponsors";
 import CommunitySponsors from "@/components/CommunitySponsors";
 import Image from "next/image";
+// 🎯 Import the new CountdownTimer component (assuming it's in components/)
+import CountdownTimer from "@/components/timercountdown"; 
 
 const currentSponsorLogosForGrid = [
   {
@@ -217,6 +219,12 @@ export default function Home() {
             </ContainerAnimated>
           </ContainerSticky>
         </ContainerScroll>
+
+        {/* 🚀 TIMER COUNTDOWN SECTION INSERTED HERE */}
+        <section id="timer-countdown" className="pt-0 md:pt-10">
+          <CountdownTimer />
+        </section>
+        
       </section>
       <section id="sub-hero" className="min-h-screen ">
         <div className="h-full w-full flex items-center justify-center">
