@@ -3,10 +3,15 @@ import React from "react";
 import StaggeredMenu from "./StaggeredMenu";
 
 const menuItems = [
-  { label: "Home", ariaLabel: "Go to home page", link: "/" },
-  { label: "About", ariaLabel: "Learn about us", link: "/about" },
-  { label: "Services", ariaLabel: "View our services", link: "/services" },
-  { label: "Contact", ariaLabel: "Get in touch", link: "/contact" },
+  { label: "Home", ariaLabel: "Go to home section", link: "#home" },
+  { label: "Tracks", ariaLabel: "Go to tracks section", link: "#tracks" },
+  { label: "Timeline", ariaLabel: "Go to timeline section", link: "#timeline" },
+  {
+    label: "Sponsors",
+    ariaLabel: "Go to sponsors section",
+    link: "#current-sponsors",
+  },
+  { label: "FAQs", ariaLabel: "Go to FAQs section", link: "#faqs" },
 ];
 
 const socialItems = [

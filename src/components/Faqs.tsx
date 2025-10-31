@@ -1,6 +1,6 @@
 "use client";
-import React, { useState } from 'react';
-import './Faqs.css'; 
+import React, { useState } from "react";
+import "./Faqs.css";
 
 interface FaqItem {
   question: string;
@@ -32,29 +32,35 @@ const faqAnswers = [
 const faqData: FaqItem[] = faqQuestions.map((question, index) => {
   return {
     question: question,
-    answer: faqAnswers[index] || "Answer missing", 
+    answer: faqAnswers[index] || "Answer missing",
   };
 });
 
 const FaqItemComponent: React.FC<{ item: FaqItem }> = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Helper function to toggle the state
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
+  const toggleOpen = () => setIsOpen((v) => !v);
+  const onKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      toggleOpen();
+    }
   };
 
   return (
-    <div className="faq-item" data-open={isOpen}>
-      {/* Click handler on the question */}
-      <div className="faq-question" onClick={toggleOpen}>
+    <div
+      className="faq-item"
+      data-open={isOpen}
+      role="button"
+      tabIndex={0}
+      onClick={toggleOpen}
+      onKeyDown={onKey}
+    >
+      <div className="faq-question">
         <h2>{item.question}</h2>
-        <span>{isOpen ? '−' : '+'}</span>
+        <span>{isOpen ? "−" : "+"}</span>
       </div>
-
-       {/* --- ADDED CLICK HANDLER HERE --- */}
-       {/* Now clicking the answer area will also close it */}
-      <div className="faq-answer" onClick={toggleOpen}>
+      <div className="faq-answer">
         <p>{item.answer}</p>
       </div>
     </div>
@@ -72,4 +78,3 @@ export const Faqs: React.FC = () => {
     </section>
   );
 };
-

@@ -5,7 +5,6 @@ import { HyperText } from "@/components/ui/hyper-text";
 import { Faqs } from "@/components/Faqs";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import CategoryListDemo from "@/components/demo/category-list-demo";
-import PromptingIsAllYouNeed from "@/components/animated-hero-section";
 import {
   ContainerAnimated,
   ContainerInset,
@@ -14,12 +13,12 @@ import {
   HeroVideo,
 } from "@/components/animated-video-on-scroll";
 import { GetStartedButton } from "@/components/ui/get-started-button";
-import { CurrentSponsors } from "@/components/CurrentSponsors";
 import CommunitySponsors from "@/components/CommunitySponsors";
-import Image from "next/image";
 // 🎯 Import the new CountdownTimer component (assuming it's in components/)
 import CountdownTimer from "@/components/timercountdown";
 import { DefyInfoSection } from "@/components/HackathonShowcase";
+import { LogoCloud } from "@/components/logo-cloud-2";
+import LogoLoop from "@/components/LogoLoop";
 
 const currentSponsorLogosForGrid = [
   {
@@ -188,8 +187,8 @@ export default function Home() {
       {/* <section className="relative min-h-screen flex items-center justify-center overflow-hidden ">
         <PromptingIsAllYouNeed />
       </section> */}
-      <section>
-        <ContainerScroll className="h-[350vh]">
+      <section id="home">
+        <ContainerScroll className="h-[240vh] sm:h-[300vh] md:h-[330vh] lg:h-[350vh]">
           <ContainerSticky
             style={{}}
             className="bg-background px-4 py-10 sm:px-6 md:px-8 lg:px-12 text-foreground"
@@ -280,7 +279,18 @@ export default function Home() {
           Current Sponsors
           <span className="absolute -bottom-2 md:-bottom-4 left-1/2 h-1 w-12 md:w-20 -translate-x-1/2 rounded-full bg-primary"></span>
         </h2>
-        <CurrentSponsors sponsors={currentSponsorLogosForGrid} />
+        <div className="mx-auto max-w-6xl">
+          <LogoCloud
+            className="rounded-lg overflow-hidden border border-primary/30 mb-10"
+            logos={currentSponsorLogosForGrid.map((logo) => ({
+              src: logo.src,
+              alt: logo.alt,
+              href: logo.href,
+              height: logo.height,
+              noInvert: logo.noInvert,
+            }))}
+          />
+        </div>
       </section>
 
       <section id="community-sponsors" className="py-12 md:py-20 px-4">
@@ -292,28 +302,27 @@ export default function Home() {
       </section>
 
       <section id="previous-sponsors" className="py-12 md:py-20 px-4">
-        <h2 className="relative mb-8 md:mb-16 text-center text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wider text-primary">
+        <h2 className="relative mb-6 md:mb-10 text-center text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wider text-primary">
           Previous Year Sponsors
-          <span className="absolute -bottom-2 md:-bottom-4 left-1/2 h-1 w-12 md:w-20 -translate-x-1/2 rounded-full bg-primary"></span>
+          <span className="absolute -bottom-2 left-1/2 h-1 w-16 -translate-x-1/2 rounded-full bg-primary"></span>
         </h2>
-        <div className="flex flex-wrap justify-center gap-4 md:gap-8 px-4">
-          {previousSponsorLogos.map((logo, index) => (
-            <a
-              key={index}
-              href={logo.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-16 w-24 sm:h-20 sm:w-32 items-center justify-center rounded-lg bg-card p-2 sm:p-4 transition-transform hover:scale-105"
-            >
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={120}
-                height={60}
-                className="h-auto max-h-full w-auto max-w-full object-contain"
-              />
-            </a>
-          ))}
+        <div className="mx-auto max-w-6xl mt-30">
+          <LogoLoop
+            className="rounded-lg bg-background/60"
+            logos={previousSponsorLogos.map((l) => ({
+              src: l.src,
+              alt: l.alt,
+              href: l.href,
+              height: 80,
+            }))}
+            speed={120}
+            gap={40}
+            logoHeight={80}
+            fadeOut
+            fadeOutColor="var(--background)"
+            scaleOnHover
+            ariaLabel="Previous sponsors"
+          />
         </div>
       </section>
 

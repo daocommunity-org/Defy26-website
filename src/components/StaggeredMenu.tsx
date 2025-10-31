@@ -514,8 +514,38 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                     href={it.link}
                     aria-label={it.ariaLabel}
                     data-index={idx + 1}
+                    onClick={(e) => {
+                      const isHash = it.link?.startsWith("#");
+                      if (isHash) {
+                        e.preventDefault();
+                        const id = it.link.slice(1);
+                        const target = document.getElementById(id);
+                        if (target) {
+                          const header = document.querySelector(
+                            ".staggered-menu-header"
+                          ) as HTMLElement | null;
+                          const offset = header?.offsetHeight ?? 0;
+                          const rect = target.getBoundingClientRect();
+                          const scrollTop =
+                            window.pageYOffset ||
+                            document.documentElement.scrollTop;
+                          const top = rect.top + scrollTop - offset - 8;
+                          window.scrollTo({ top, behavior: "smooth" });
+                        }
+                      }
+                      if (openRef.current) {
+                        openRef.current = false;
+                        setOpen(false);
+                        onMenuClose?.();
+                        playClose();
+                        animateColor(false);
+                        animateText(false);
+                      }
+                    }}
                   >
-                    <span className="sm-panel-itemLabel text-foreground hover:text-primary">{it.label}</span>
+                    <span className="sm-panel-itemLabel text-foreground hover:text-primary">
+                      {it.label}
+                    </span>
                   </a>
                 </li>
               ))
