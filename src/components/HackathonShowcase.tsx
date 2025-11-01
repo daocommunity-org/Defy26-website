@@ -63,72 +63,82 @@ export function DefyInfoSection() {
           </p>
         </div>
 
-        <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 mb-8 bg-card/50 border border-primary/20">
+        {/* Tabs for All Screen Sizes */}
+        <Tabs
+          value={activeTab}
+          onValueChange={setActiveTab}
+          className="w-full isolate"
+        >
+          <TabsList className="relative z-50 grid w-full grid-cols-3 mb-8 bg-card border border-primary/20 h-auto p-2 gap-2 isolate shadow-lg">
             <TabsTrigger
               value="what"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-4 px-3 text-xs sm:text-sm min-h-11 touch-manipulation cursor-pointer"
             >
-              <Zap className="mr-2 h-4 w-4" />
+              <Zap className="mr-1 sm:mr-2 h-4 w-4 shrink-0" />
               <span className="hidden sm:inline">What is it?</span>
               <span className="sm:hidden">What</span>
             </TabsTrigger>
             <TabsTrigger
               value="who"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-4 px-3 text-xs sm:text-sm min-h-11 touch-manipulation cursor-pointer"
             >
-              <Users className="mr-2 h-4 w-4" />
+              <Users className="mr-1 sm:mr-2 h-4 w-4 shrink-0" />
               <span className="hidden sm:inline">Who Can Join?</span>
               <span className="sm:hidden">Who</span>
             </TabsTrigger>
             <TabsTrigger
               value="how"
-              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-4 px-3 text-xs sm:text-sm min-h-11 touch-manipulation cursor-pointer"
             >
-              <Clock className="mr-2 h-4 w-4" />
+              <Clock className="mr-1 sm:mr-2 h-4 w-4 shrink-0" />
               <span className="hidden sm:inline">How It Works</span>
               <span className="sm:hidden">How</span>
             </TabsTrigger>
           </TabsList>
 
-          {Object.entries(infoData).map(([key, data]) => (
-            <TabsContent
-              key={key}
-              value={key}
-              className="animate-in fade-in duration-300"
-            >
-              <Card className="border-primary/20 bg-card/50 backdrop-blur-sm overflow-hidden">
-                <div className="p-8 sm:p-12">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="rounded-lg bg-primary/10 p-3 flex-shrink-0">
-                      <CurrentIcon className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="text-2xl sm:text-3xl font-bold">
-                      {data.title}
-                    </h3>
-                  </div>
-
-                  <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
-                    {data.description}
-                  </p>
-
-                  <div className="space-y-3">
-                    <p className="font-semibold text-foreground mb-4">
-                      Key Points:
-                    </p>
-                    {data.highlights.map((highlight, index) => (
-                      <div key={index} className="flex items-start gap-3 group">
-                        <div className="mt-1.5 h-2 w-2 rounded-full bg-primary flex-shrink-0 group-hover:scale-150 transition-transform" />
-                        <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                          {highlight}
-                        </span>
+          <div className="relative z-0 overflow-hidden mt-4">
+            {Object.entries(infoData).map(([key, data]) => (
+              <TabsContent
+                key={key}
+                value={key}
+                className="animate-in fade-in duration-300"
+              >
+                <Card className="border-primary/20 bg-card/50 backdrop-blur-sm overflow-hidden">
+                  <div className="p-6 sm:p-8 md:p-12">
+                    <div className="flex items-start gap-3 sm:gap-4 mb-4 sm:mb-6">
+                      <div className="rounded-lg bg-primary/10 p-2 sm:p-3 shrink-0">
+                        <CurrentIcon className="h-5 w-5 sm:h-6 sm:w-6 text-primary" />
                       </div>
-                    ))}
+                      <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">
+                        {data.title}
+                      </h3>
+                    </div>
+
+                    <p className="text-sm sm:text-base md:text-lg text-muted-foreground mb-6 sm:mb-8 leading-relaxed">
+                      {data.description}
+                    </p>
+
+                    <div className="space-y-3">
+                      <p className="font-semibold text-foreground mb-3 sm:mb-4">
+                        Key Points:
+                      </p>
+                      {data.highlights.map((highlight, index) => (
+                        <div
+                          key={index}
+                          className="flex items-start gap-2.5 sm:gap-3 group"
+                        >
+                          <div className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0 group-hover:scale-150 transition-transform" />
+                          <span className="text-sm sm:text-base text-muted-foreground group-hover:text-foreground transition-colors">
+                            {highlight}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </Card>
-            </TabsContent>
-          ))}
+                </Card>
+              </TabsContent>
+            ))}
+          </div>
         </Tabs>
       </div>
     </section>

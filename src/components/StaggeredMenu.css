@@ -189,11 +189,24 @@
   width: clamp(260px, 38vw, 420px);
   pointer-events: none;
   z-index: 5;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 [data-position="left"] .sm-prelayers {
   right: auto;
   left: 0;
+}
+
+.staggered-menu-wrapper:not([data-open]) .sm-prelayers {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.staggered-menu-wrapper[data-open] .sm-prelayers {
+  opacity: 1;
+  visibility: visible;
 }
 
 .sm-prelayer {

@@ -6,6 +6,7 @@ import {
   FaTrophy,
   FaRocket,
   FaUsers,
+  FaChevronDown,
 } from "react-icons/fa";
 
 const InteractiveSelector = () => {
@@ -59,6 +60,16 @@ const InteractiveSelector = () => {
     }
   };
 
+  const handleOptionKeyDown = (
+    event: React.KeyboardEvent<HTMLButtonElement | HTMLDivElement>,
+    index: number
+  ) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      handleOptionClick(index);
+    }
+  };
+
   useEffect(() => {
     const timers: NodeJS.Timeout[] = [];
 
@@ -92,11 +103,11 @@ const InteractiveSelector = () => {
         {/* Mobile: Stacked Cards */}
         <div className="flex flex-col gap-4 sm:hidden">
           {options.map((option, index) => (
-            <div
+            <button
               key={index}
               className={`
-                relative overflow-hidden rounded-xl transition-all duration-500
-                h-64 border-2 border-primary shadow-lg shadow-primary/20
+                relative w-full overflow-hidden rounded-xl transition-all duration-500 ease-out cursor-pointer text-left
+                border-2 border-primary shadow-lg shadow-primary/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background
               `}
               style={{
                 backgroundImage: `url('${option.image}')`,
@@ -106,13 +117,20 @@ const InteractiveSelector = () => {
                 transform: animatedOptions.includes(index)
                   ? "translateY(0)"
                   : "translateY(20px)",
+                height: activeIndex === index ? "17rem" : "5.5rem",
+                transition:
+                  "height 0.5s ease, transform 0.5s ease, opacity 0.5s ease",
               }}
+              type="button"
+              onClick={() => handleOptionClick(index)}
+              onKeyDown={(event) => handleOptionKeyDown(event, index)}
+              aria-expanded={activeIndex === index}
             >
               {/* Overlay */}
               <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-background/20 pointer-events-none"></div>
 
               {/* Content */}
-              <div className="relative h-full flex flex-col justify-end p-4">
+              <div className="relative h-full flex flex-col justify-between p-4">
                 <div className="flex items-center gap-3">
                   <div className="flex items-center justify-center w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm border border-primary/30 shrink-0">
                     {option.icon}
@@ -121,13 +139,28 @@ const InteractiveSelector = () => {
                     <h3 className="font-bold text-base text-foreground leading-tight">
                       {option.title}
                     </h3>
-                    <p className="text-sm text-muted-foreground mt-1 leading-tight">
-                      {option.description}
-                    </p>
                   </div>
+                  <FaChevronDown
+                    size={16}
+                    className={`text-primary transition-transform duration-300 ${
+                      activeIndex === index ? "rotate-180" : ""
+                    }`}
+                    aria-hidden="true"
+                  />
+                </div>
+                <div
+                  className={`mt-3 overflow-hidden transition-[max-height,opacity] duration-500 ease-out ${
+                    activeIndex === index
+                      ? "max-h-32 opacity-100"
+                      : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="text-sm text-muted-foreground leading-tight">
+                    {option.description}
+                  </p>
                 </div>
               </div>
-            </div>
+            </button>
           ))}
         </div>
 
