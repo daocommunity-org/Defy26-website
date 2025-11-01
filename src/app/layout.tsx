@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Bungee, Bebas_Neue } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-
+import { Analytics } from "@vercel/analytics/next";
 import ReactLenis from "lenis/react";
 import { Footer } from "@/components/footer-taped-design";
 
@@ -44,6 +44,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${bungee.variable} ${bebasNeue.variable} antialiased`}
       >
+        <Analytics />
         <ReactLenis root />
         <Navbar />
         {children}
