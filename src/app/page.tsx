@@ -235,7 +235,7 @@ export default function Home() {
         </section>
 
         {/* Interactive Selector Section */}
-        <section className="relative">
+        <section id="tracks" className="relative">
           <InteractiveSelector />
         </section>
       </section>
