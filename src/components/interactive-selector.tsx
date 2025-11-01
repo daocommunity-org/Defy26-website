@@ -95,12 +95,8 @@ const InteractiveSelector = () => {
             <div
               key={index}
               className={`
-                relative overflow-hidden rounded-xl transition-all duration-500 cursor-pointer
-                ${
-                  activeIndex === index
-                    ? "h-64 border-2 border-primary shadow-lg shadow-primary/20"
-                    : "h-20 border border-border"
-                }
+                relative overflow-hidden rounded-xl transition-all duration-500
+                h-64 border-2 border-primary shadow-lg shadow-primary/20
               `}
               style={{
                 backgroundImage: `url('${option.image}')`,
@@ -111,7 +107,6 @@ const InteractiveSelector = () => {
                   ? "translateY(0)"
                   : "translateY(20px)",
               }}
-              onClick={() => handleOptionClick(index)}
             >
               {/* Overlay */}
               <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-background/20 pointer-events-none"></div>
@@ -126,11 +121,9 @@ const InteractiveSelector = () => {
                     <h3 className="font-bold text-base text-foreground leading-tight">
                       {option.title}
                     </h3>
-                    {activeIndex === index && (
-                      <p className="text-sm text-muted-foreground mt-1 leading-tight">
-                        {option.description}
-                      </p>
-                    )}
+                    <p className="text-sm text-muted-foreground mt-1 leading-tight">
+                      {option.description}
+                    </p>
                   </div>
                 </div>
               </div>
