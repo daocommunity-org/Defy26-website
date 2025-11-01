@@ -36,14 +36,15 @@ const faqData: FaqItem[] = faqQuestions.map((question, index) => {
   };
 });
 
-const FaqItemComponent: React.FC<{ item: FaqItem }> = ({ item }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleOpen = () => setIsOpen((v) => !v);
+const FaqItemComponent: React.FC<{
+  item: FaqItem;
+  isOpen: boolean;
+  onToggle: () => void;
+}> = ({ item, isOpen, onToggle }) => {
   const onKey = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      toggleOpen();
+      onToggle();
     }
   };
 
@@ -53,14 +54,21 @@ const FaqItemComponent: React.FC<{ item: FaqItem }> = ({ item }) => {
       data-open={isOpen}
       role="button"
       tabIndex={0}
-      onClick={toggleOpen}
+      onClick={onToggle}
       onKeyDown={onKey}
+      aria-expanded={isOpen}
+      aria-controls={`faq-answer-${item.question
+        .replace(/\s+/g, "-")
+        .toLowerCase()}`}
     >
       <div className="faq-question">
         <h2>{item.question}</h2>
-        <span>{isOpen ? "−" : "+"}</span>
+        <span aria-hidden="true">{isOpen ? "−" : "+"}</span>
       </div>
-      <div className="faq-answer">
+      <div
+        className="faq-answer"
+        id={`faq-answer-${item.question.replace(/\s+/g, "-").toLowerCase()}`}
+      >
         <p>{item.answer}</p>
       </div>
     </div>
@@ -68,11 +76,22 @@ const FaqItemComponent: React.FC<{ item: FaqItem }> = ({ item }) => {
 };
 
 export const Faqs: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
     <section className="faq-section">
       <div className="faq-list">
         {faqData.map((item, index) => (
-          <FaqItemComponent key={index} item={item} />
+          <FaqItemComponent
+            key={index}
+            item={item}
+            isOpen={openIndex === index}
+            onToggle={() => toggleFaq(index)}
+          />
         ))}
       </div>
     </section>
