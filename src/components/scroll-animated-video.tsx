@@ -435,7 +435,7 @@ export const HeroScrollVideo: React.FC<HeroScrollVideoProps> = ({
       );
     }
     // video
-    const sources: JSX.Element[] = [];
+    const sources: React.JSX.Element[] = [];
     if (typeof media === "string") {
       sources.push(<source key="mp4" src={media} type="video/mp4" />);
     } else if (isSourceObject(media)) {

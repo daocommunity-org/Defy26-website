@@ -90,7 +90,7 @@ export default function CountdownTimer() {
             className="text-center"
           >
             <h2 className="text-5xl sm:text-6xl md:text-7xl font-bold text-primary mb-2">
-              Time's Up! 🎉
+              Time&apos;s Up! 🎉
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground">
               November 1st has arrived!

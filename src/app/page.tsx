@@ -1,10 +1,7 @@
 "use client";
 
-import SubHero from "@/components/subHero";
-import { HyperText } from "@/components/ui/hyper-text";
 import { Faqs } from "@/components/Faqs";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
-import CategoryListDemo from "@/components/demo/category-list-demo";
 import {
   ContainerAnimated,
   ContainerInset,
@@ -19,6 +16,8 @@ import CountdownTimer from "@/components/timercountdown";
 import { DefyInfoSection } from "@/components/HackathonShowcase";
 import { LogoCloud } from "@/components/logo-cloud-2";
 import LogoLoop from "@/components/LogoLoop";
+import InteractiveSelector from "@/components/interactive-selector";
+import Defy25Memories from "@/components/Defy25Memories";
 
 const currentSponsorLogosForGrid = [
   {
@@ -188,88 +187,67 @@ export default function Home() {
         <PromptingIsAllYouNeed />
       </section> */}
       <section id="home">
-        <ContainerScroll className="h-[240vh] sm:h-[300vh] md:h-[330vh] lg:h-[350vh]">
+        <ContainerScroll className="h-[200vh] sm:h-[220vh] md:h-[240vh] lg:h-[250vh]">
           <ContainerSticky
             style={{}}
-            className="bg-background px-4 py-10 sm:px-6 md:px-8 lg:px-12 text-foreground"
+            className="bg-background px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 text-foreground min-h-screen flex flex-col justify-center"
           >
-            <ContainerAnimated className="space-y-4 md:space-y-6 text-center max-w-5xl mx-auto px-4">
+            <ContainerAnimated className="space-y-4 md:space-y-6 text-center max-w-5xl mx-auto px-4 flex-1 flex flex-col justify-center">
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight">
                 Defy <span className="text-primary"> The Limits </span>
               </h1>
-              <p className="mx-auto max-w-[42ch] text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-2">
+              <p className="mx-auto max-w-[42ch] text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-4 sm:mb-6 md:mb-8">
                 Code. Create. Conquer. Join the Defy 26 Hackathon and push
                 innovation beyond limits.
               </p>
             </ContainerAnimated>
-            <ContainerInset className="max-h-[300px] sm:max-h-[400px] md:max-h-[450px] lg:max-h-[500px] w-full max-w-6xl mx-auto py-6 px-4 flex items-center justify-center">
+
+            <ContainerInset className="max-h-[250px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[450px] w-full max-w-5xl mx-auto py-4 sm:py-6 px-4 flex items-center justify-center mb-4 sm:mb-6 md:mb-8">
               <HeroVideo
                 src="bg-video.mp4"
                 data-src="bg-video.mp4"
-                className="rounded-xl border-2 border-primary/20 shadow-2xl shadow-primary/10 w-full h-full object-cover mx-auto"
+                className="rounded-xl border-2 border-primary/20 shadow-2xl shadow-primary/10 w-full h-full object-cover"
               />
             </ContainerInset>
+
             <ContainerAnimated
               transition={{ delay: 0.4 }}
               outputRange={[-120, 0]}
               inputRange={[0, 0.7]}
-              className="mx-auto mt-6 w-fit"
+              className="mx-auto w-fit"
             >
               <GetStartedButton />
             </ContainerAnimated>
           </ContainerSticky>
         </ContainerScroll>
-        <section>
+
+        {/* Transition section with smooth flow */}
+        <section className="relative -mt-8 sm:-mt-12 md:-mt-16 lg:-mt-20">
           <DefyInfoSection />
         </section>
 
         {/* 🚀 TIMER COUNTDOWN SECTION INSERTED HERE */}
-        <section id="timer-countdown" className="py-8 md:py-16">
+        <section
+          id="timer-countdown"
+          className="py-8 sm:py-12 md:py-16 lg:py-20"
+        >
           <CountdownTimer />
         </section>
+
+        {/* Interactive Selector Section */}
+        <section className="relative">
+          <InteractiveSelector />
+        </section>
       </section>
-      <section id="sub-hero" className="min-h-screen ">
-        <div className="h-full w-full flex items-center justify-center">
-          <div className="flex items-center justify-center w-full min-h-screen bg-black p-4">
-            <div className="w-full h-screen relative">
-              <SubHero
-                beamWidth={2}
-                beamHeight={15}
-                beamNumber={12}
-                lightColor="#ffffff"
-                speed={3}
-                noiseIntensity={1.75}
-                scale={0.2}
-                rotation={0}
-              />
-              <div className="absolute inset-0 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-                  <HyperText
-                    animateOnHover={true}
-                    startOnView={true}
-                    className="text-6xl sm:text-8xl md:text-9xl lg:text-9xl text-foreground"
-                  >
-                    Defy
-                  </HyperText>
-                  <HyperText
-                    animateOnHover={true}
-                    startOnView={true}
-                    className="text-6xl sm:text-8xl md:text-9xl lg:text-9xl text-primary"
-                  >
-                    26
-                  </HyperText>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+      {/* Defy 25 Memories Section */}
+      <section id="defy25-memories" className="relative">
+        <Defy25Memories />
       </section>
-      <section id="tracks" className="h-full flex items-center justify-center">
-        <CategoryListDemo />
-      </section>
+
       <section
         id="timeline"
-        className="h-full flex items-center justify-center"
+        className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center py-8 sm:py-12 md:py-16"
       >
         <RadialOrbitalTimeline />
       </section>

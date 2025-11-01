@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   HTMLMotionProps,
   MotionValue,
@@ -9,25 +9,25 @@ import {
   useMotionTemplate,
   useScroll,
   useTransform,
-} from "motion/react"
+} from "motion/react";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 interface ContainerScrollContextValue {
-  scrollYProgress: MotionValue<number>
+  scrollYProgress: MotionValue<number>;
 }
 interface ContainerInsetProps extends HTMLMotionProps<"div"> {
-  insetYRange?: [number, number]
-  insetXRange?: [number, number]
-  roundednessRange?: [number, number]
+  insetYRange?: [number, number];
+  insetXRange?: [number, number];
+  roundednessRange?: [number, number];
 }
 const SPRING_TRANSITION_CONFIG = {
-  type: "spring",
+  type: "spring" as const,
   stiffness: 100,
   damping: 16,
   mass: 0.75,
   restDelta: 0.005,
-}
+};
 
 const variants: Variants = {
   hidden: {
@@ -38,28 +38,28 @@ const variants: Variants = {
     filter: "blur(0px)",
     opacity: 1,
   },
-}
+};
 const ContainerScrollContext = React.createContext<
   ContainerScrollContextValue | undefined
->(undefined)
+>(undefined);
 function useContainerScrollContext() {
-  const context = React.useContext(ContainerScrollContext)
+  const context = React.useContext(ContainerScrollContext);
   if (!context) {
     throw new Error(
       "useContainerScrollContext must be used within a ContainerScroll Component"
-    )
+    );
   }
-  return context
+  return context;
 }
 
 export const ContainerScroll: React.FC<
   React.HTMLAttributes<HTMLDivElement>
 > = ({ children, className, ...props }) => {
-  const scrollRef = React.useRef<HTMLDivElement>(null)
+  const scrollRef = React.useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
     offset: ["start center", "end end"],
-  })
+  });
 
   return (
     <ContainerScrollContext.Provider value={{ scrollYProgress }}>
@@ -71,12 +71,12 @@ export const ContainerScroll: React.FC<
         {children}
       </div>
     </ContainerScrollContext.Provider>
-  )
-}
-ContainerScroll.displayName = "ContainerScroll"
+  );
+};
+ContainerScroll.displayName = "ContainerScroll";
 interface ContainerAnimatedProps extends HTMLMotionProps<"div"> {
-  inputRange?: number[]
-  outputRange?: number[]
+  inputRange?: number[];
+  outputRange?: number[];
 }
 export const ContainerAnimated = React.forwardRef<
   HTMLDivElement,
@@ -93,8 +93,8 @@ export const ContainerAnimated = React.forwardRef<
     },
     ref
   ) => {
-    const { scrollYProgress } = useContainerScrollContext()
-    const y = useTransform(scrollYProgress, inputRange, outputRange)
+    const { scrollYProgress } = useContainerScrollContext();
+    const y = useTransform(scrollYProgress, inputRange, outputRange);
     return (
       <motion.div
         ref={ref}
@@ -107,10 +107,10 @@ export const ContainerAnimated = React.forwardRef<
         transition={{ ...SPRING_TRANSITION_CONFIG, ...transition }}
         {...props}
       />
-    )
+    );
   }
-)
-ContainerAnimated.displayName = "ContainerAnimated"
+);
+ContainerAnimated.displayName = "ContainerAnimated";
 
 export const ContainerSticky = React.forwardRef<
   HTMLDivElement,
@@ -122,16 +122,16 @@ export const ContainerSticky = React.forwardRef<
       className={cn("sticky left-0 top-0 min-h-svh w-full", className)}
       {...props}
     />
-  )
-})
-ContainerSticky.displayName = "ContainerSticky"
+  );
+});
+ContainerSticky.displayName = "ContainerSticky";
 
 export const HeroVideo = React.forwardRef<
   HTMLVideoElement,
   HTMLMotionProps<"video">
 >(({ style, className, transition, ...props }, ref) => {
-  const { scrollYProgress } = useContainerScrollContext()
-  const scale = useTransform(scrollYProgress, [0, 0.8], [0.7, 1])
+  const { scrollYProgress } = useContainerScrollContext();
+  const scale = useTransform(scrollYProgress, [0, 0.8], [0.7, 1]);
 
   return (
     <motion.video
@@ -147,9 +147,9 @@ export const HeroVideo = React.forwardRef<
       style={{ scale, ...style }}
       {...props}
     />
-  )
-})
-HeroVideo.displayName = "HeroVideo"
+  );
+});
+HeroVideo.displayName = "HeroVideo";
 
 export const HeroButton = React.forwardRef<
   HTMLButtonElement,
@@ -170,9 +170,9 @@ export const HeroButton = React.forwardRef<
       )}
       {...props}
     />
-  )
-})
-HeroButton.displayName = "HeroButton"
+  );
+});
+HeroButton.displayName = "HeroButton";
 
 export const ContainerInset = React.forwardRef<
   HTMLDivElement,
@@ -190,13 +190,13 @@ export const ContainerInset = React.forwardRef<
     },
     ref
   ) => {
-    const { scrollYProgress } = useContainerScrollContext()
+    const { scrollYProgress } = useContainerScrollContext();
 
-    const insetY = useTransform(scrollYProgress, [0, 0.8], insetYRange)
-    const insetX = useTransform(scrollYProgress, [0, 0.8], insetXRange)
-    const roundedness = useTransform(scrollYProgress, [0, 1], roundednessRange)
+    const insetY = useTransform(scrollYProgress, [0, 0.8], insetYRange);
+    const insetX = useTransform(scrollYProgress, [0, 0.8], insetXRange);
+    const roundedness = useTransform(scrollYProgress, [0, 1], roundednessRange);
 
-    const clipPath = useMotionTemplate`inset(${insetY}% ${insetX}% ${insetY}% ${insetX}% round ${roundedness}px)`
+    const clipPath = useMotionTemplate`inset(${insetY}% ${insetX}% ${insetY}% ${insetX}% round ${roundedness}px)`;
 
     return (
       <motion.div
@@ -211,7 +211,7 @@ export const ContainerInset = React.forwardRef<
         }}
         {...props}
       />
-    )
+    );
   }
-)
-ContainerInset.displayName = "ContainerInset"
+);
+ContainerInset.displayName = "ContainerInset";

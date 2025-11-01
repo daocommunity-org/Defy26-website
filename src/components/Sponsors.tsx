@@ -9,10 +9,14 @@ const ANIMATION_CONFIG = {
   COPY_HEADROOM: 2,
 };
 
-const toCssLength = (value) =>
+const toCssLength = (value: number | string | undefined) =>
   typeof value === "number" ? `${value}px` : value ?? undefined;
 
-const useResizeObserver = (callback, elements, dependencies) => {
+const useResizeObserver = (
+  callback: () => void,
+  elements: React.RefObject<HTMLElement>[],
+  dependencies: any[]
+) => {
   useEffect(() => {
     if (!window.ResizeObserver) {
       const handleResize = () => callback();
@@ -36,7 +40,7 @@ const useResizeObserver = (callback, elements, dependencies) => {
   }, dependencies);
 };
 
-const useImageLoader = (seqRef, onLoad, dependencies) => {
+const useImageLoader = (seqRef: any, onLoad: any, dependencies: any) => {
   useEffect(() => {
     const images = seqRef.current?.querySelectorAll("img") ?? [];
 
@@ -53,7 +57,7 @@ const useImageLoader = (seqRef, onLoad, dependencies) => {
       }
     };
 
-    images.forEach((img) => {
+    images.forEach((img: any) => {
       const htmlImg = img;
       if (htmlImg.complete) {
         handleImageLoad();
@@ -64,7 +68,7 @@ const useImageLoader = (seqRef, onLoad, dependencies) => {
     });
 
     return () => {
-      images.forEach((img) => {
+      images.forEach((img: any) => {
         img.removeEventListener("load", handleImageLoad);
         img.removeEventListener("error", handleImageLoad);
       });
@@ -73,14 +77,14 @@ const useImageLoader = (seqRef, onLoad, dependencies) => {
 };
 
 const useAnimationLoop = (
-  trackRef,
-  targetVelocity,
-  seqWidth,
-  isHovered,
-  pauseOnHover
+  trackRef: any,
+  targetVelocity: any,
+  seqWidth: any,
+  isHovered: any,
+  pauseOnHover: any
 ) => {
-  const rafRef = useRef(null);
-  const lastTimestampRef = useRef(null);
+  const rafRef = useRef<number | null>(null);
+  const lastTimestampRef = useRef<number | null>(null);
   const offsetRef = useRef(0);
   const velocityRef = useRef(0);
 
@@ -94,7 +98,7 @@ const useAnimationLoop = (
       track.style.transform = `translate3d(${-offsetRef.current}px, 0, 0)`;
     }
 
-    const animate = (timestamp) => {
+    const animate = (timestamp: number) => {
       if (lastTimestampRef.current === null) {
         lastTimestampRef.current = timestamp;
       }
@@ -148,10 +152,10 @@ const Sponsors = memo(
     ariaLabel = "Partner logos",
     className,
     style,
-  }) => {
-    const containerRef = useRef(null);
-    const trackRef = useRef(null);
-    const seqRef = useRef(null);
+  }: any) => {
+    const containerRef = useRef<any>(null);
+    const trackRef = useRef<any>(null);
+    const seqRef = useRef<any>(null);
 
     const [seqWidth, setSeqWidth] = useState(0);
     const [copyCount, setCopyCount] = useState(ANIMATION_CONFIG.MIN_COPIES);
@@ -224,7 +228,7 @@ const Sponsors = memo(
       if (pauseOnHover) setIsHovered(false);
     }, [pauseOnHover]);
 
-    const renderLogoItem = useCallback((item, key) => {
+    const renderLogoItem = useCallback((item: any, key: any) => {
       const isNodeItem = "node" in item;
 
       const content = isNodeItem ? (
@@ -284,7 +288,7 @@ const Sponsors = memo(
             aria-hidden={copyIndex > 0}
             ref={copyIndex === 0 ? seqRef : undefined}
           >
-            {logos.map((item, itemIndex) =>
+            {logos.map((item: any, itemIndex: any) =>
               renderLogoItem(item, `${copyIndex}-${itemIndex}`)
             )}
           </ul>

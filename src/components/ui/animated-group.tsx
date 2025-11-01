@@ -48,9 +48,9 @@ export function AnimatedGroup({
     <motion.div
       initial={initial}
       animate={animate}
-      exit={exit}
+      exit={exit as any}
       variants={containerVariants}
-      {...props}
+      {...(props as any)}
     >
       {React.Children.map(children, (child) => (
         <motion.div variants={itemVariants}>{child}</motion.div>

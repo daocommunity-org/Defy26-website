@@ -1,0 +1,260 @@
+"use client";
+import React, { useState, useEffect, useMemo } from "react";
+import {
+  FaCode,
+  FaLaptopCode,
+  FaTrophy,
+  FaRocket,
+  FaUsers,
+} from "react-icons/fa";
+
+const InteractiveSelector = () => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [animatedOptions, setAnimatedOptions] = useState<number[]>([]);
+
+  const options = useMemo(
+    () => [
+      {
+        title: "Code Track",
+        description: "Build innovative solutions",
+        image:
+          "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+        icon: <FaCode size={20} className="text-primary" />,
+      },
+      {
+        title: "AI/ML Track",
+        description: "Machine learning innovations",
+        image:
+          "https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=800&q=80",
+        icon: <FaLaptopCode size={20} className="text-primary" />,
+      },
+      {
+        title: "Web3 Track",
+        description: "Blockchain & decentralization",
+        image:
+          "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
+        icon: <FaRocket size={20} className="text-primary" />,
+      },
+      {
+        title: "Design Track",
+        description: "Creative UI/UX solutions",
+        image:
+          "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=80",
+        icon: <FaTrophy size={20} className="text-primary" />,
+      },
+      {
+        title: "Open Track",
+        description: "Your wildest ideas",
+        image:
+          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+        icon: <FaUsers size={20} className="text-primary" />,
+      },
+    ],
+    []
+  );
+
+  const handleOptionClick = (index: number) => {
+    if (index !== activeIndex) {
+      setActiveIndex(index);
+    }
+  };
+
+  useEffect(() => {
+    const timers: NodeJS.Timeout[] = [];
+
+    options.forEach((_, i) => {
+      const timer = setTimeout(() => {
+        setAnimatedOptions((prev) => [...prev, i]);
+      }, 180 * i);
+      timers.push(timer);
+    });
+
+    return () => {
+      timers.forEach((timer) => clearTimeout(timer));
+    };
+  }, [options]);
+
+  return (
+    <div className="relative w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Header Section */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto mb-8 sm:mb-12 md:mb-16 text-center">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-3 sm:mb-4 tracking-tight animate-fadeInTop delay-300">
+          Choose Your Track
+        </h2>
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground font-medium max-w-3xl mx-auto animate-fadeInTop delay-600">
+          Pick a track that matches your skills and passion. Build innovative
+          solutions and compete for amazing prizes.
+        </p>
+      </div>
+
+      {/* Options Container - Mobile First Responsive */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto">
+        {/* Mobile: Stacked Cards */}
+        <div className="flex flex-col gap-4 sm:hidden">
+          {options.map((option, index) => (
+            <div
+              key={index}
+              className={`
+                relative overflow-hidden rounded-xl transition-all duration-500 cursor-pointer
+                ${
+                  activeIndex === index
+                    ? "h-64 border-2 border-primary shadow-lg shadow-primary/20"
+                    : "h-20 border border-border"
+                }
+              `}
+              style={{
+                backgroundImage: `url('${option.image}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: animatedOptions.includes(index) ? 1 : 0,
+                transform: animatedOptions.includes(index)
+                  ? "translateY(0)"
+                  : "translateY(20px)",
+              }}
+              onClick={() => handleOptionClick(index)}
+            >
+              {/* Overlay */}
+              <div className="absolute inset-0 bg-linear-to-t from-background via-background/80 to-background/20 pointer-events-none"></div>
+
+              {/* Content */}
+              <div className="relative h-full flex flex-col justify-end p-4">
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full bg-background/90 backdrop-blur-sm border border-primary/30 shrink-0">
+                    {option.icon}
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-base text-foreground leading-tight">
+                      {option.title}
+                    </h3>
+                    {activeIndex === index && (
+                      <p className="text-sm text-muted-foreground mt-1 leading-tight">
+                        {option.description}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Tablet & Desktop: Horizontal Expandable */}
+        <div className="hidden sm:flex gap-2 md:gap-3 h-[350px] md:h-[400px] lg:h-[450px] rounded-2xl bg-card/50 backdrop-blur-sm border border-border p-2 md:p-3">
+          {options.map((option, index) => (
+            <div
+              key={index}
+              className={`
+                relative overflow-hidden rounded-xl transition-all duration-700 ease-in-out cursor-pointer
+                ${activeIndex === index ? "flex-6" : "flex-1"}
+              `}
+              style={{
+                backgroundImage: `url('${option.image}')`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                opacity: animatedOptions.includes(index) ? 1 : 0,
+                transform: animatedOptions.includes(index)
+                  ? "translateX(0)"
+                  : "translateX(-40px)",
+                zIndex: activeIndex === index ? 20 : 10,
+              }}
+              onClick={() => handleOptionClick(index)}
+            >
+              {/* Overlay with gradient */}
+              <div
+                className={`
+                  absolute inset-0 transition-all duration-700 pointer-events-none
+                  ${
+                    activeIndex === index
+                      ? "bg-linear-to-t from-background via-background/60 to-transparent"
+                      : "bg-background/70"
+                  }
+                `}
+              ></div>
+
+              {/* Border glow for active */}
+              {activeIndex === index && (
+                <div className="absolute inset-0 border-2 border-primary rounded-xl shadow-lg shadow-primary/30 pointer-events-none"></div>
+              )}
+
+              {/* Content */}
+              <div className="relative h-full flex flex-col justify-end p-3 md:p-4 lg:p-6">
+                <div className="flex items-start gap-2 md:gap-3">
+                  <div
+                    className={`
+                      flex items-center justify-center rounded-full bg-background/90 backdrop-blur-sm border shrink-0 transition-all duration-300
+                      ${
+                        activeIndex === index
+                          ? "w-10 h-10 md:w-12 md:h-12 border-primary/50 shadow-lg shadow-primary/20"
+                          : "w-8 h-8 md:w-10 md:h-10 border-border"
+                      }
+                    `}
+                  >
+                    {option.icon}
+                  </div>
+                  <div
+                    className={`
+                      flex-1 min-w-0 transition-all duration-700
+                      ${
+                        activeIndex === index
+                          ? "opacity-100 translate-x-0"
+                          : "opacity-0 translate-x-6"
+                      }
+                    `}
+                  >
+                    <h3 className="font-bold text-base md:text-lg lg:text-xl text-foreground leading-tight mb-1">
+                      {option.title}
+                    </h3>
+                    <p className="text-xs md:text-sm lg:text-base text-muted-foreground leading-tight">
+                      {option.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Custom animations */}
+      <style jsx>{`
+        @keyframes slideFadeIn {
+          0% {
+            opacity: 0;
+            transform: translateX(-60px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes fadeInFromTop {
+          0% {
+            opacity: 0;
+            transform: translateY(-20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fadeInTop {
+          opacity: 0;
+          transform: translateY(-20px);
+          animation: fadeInFromTop 0.8s ease-in-out forwards;
+        }
+
+        .delay-300 {
+          animation-delay: 0.3s;
+        }
+
+        .delay-600 {
+          animation-delay: 0.6s;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default InteractiveSelector;
