@@ -59,7 +59,7 @@ function LogoColumn({ logos, columnIndex, currentTime }: LogoColumnProps) {
             <a href={currentLogo.href} target="_blank" rel="noopener noreferrer" className="flex h-full w-full items-center justify-center">
               <Image
                 src={currentLogo.src}
-                alt={currentLogo.name}
+                alt={currentLogo.name || 'Sponsor Logo'}
                 width={120}
                 height={40}
                 className="h-auto w-auto max-h-[80%] max-w-[80%] object-contain"
@@ -68,7 +68,7 @@ function LogoColumn({ logos, columnIndex, currentTime }: LogoColumnProps) {
           ) : (
             <Image
               src={currentLogo.src}
-              alt={currentLogo.name}
+              alt={currentLogo.name || 'Sponsor Logo'}
               width={120}
               height={40}
               className="h-auto w-auto max-h-[80%] max-w-[80%] object-contain"
