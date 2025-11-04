@@ -276,7 +276,7 @@ export default function Home() {
           Community Sponsors
           <span className="absolute -bottom-2 md:-bottom-4 left-1/2 h-1 w-12 md:w-20 -translate-x-1/2 rounded-full bg-primary"></span>
         </h2>
-        <CommunitySponsors logos={communitySponsorLogos} columns={4} />
+        <CommunitySponsors logos={communitySponsorLogos} columns={4}  />
       </section>
 
       <section id="previous-sponsors" className="py-12 md:py-20 px-4">
