@@ -89,8 +89,8 @@ const InteractiveSelector = () => {
     <div className="relative w-full py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Header Section */}
       <div className="relative z-10 w-full max-w-6xl mx-auto mb-8 sm:mb-12 md:mb-16 text-center">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-3 sm:mb-4 tracking-tight animate-fadeInTop delay-300">
-          Choose Your Track
+        <h2 className="text-3xl tracking-wider sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-3 sm:mb-4 tracking-tight animate-fadeInTop delay-300">
+          Choose Your <span className="text-primary">Track</span>
         </h2>
         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground font-medium max-w-3xl mx-auto animate-fadeInTop delay-600">
           Pick a track that matches your skills and passion. Build innovative

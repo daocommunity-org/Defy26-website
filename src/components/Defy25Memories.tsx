@@ -54,7 +54,7 @@ const Defy25Memories = () => {
 
       {/* Header Section */}
       <div className="relative z-10 w-full max-w-6xl mx-auto mb-12 sm:mb-16 md:mb-20 text-center">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight">
+        <h2 className="text-4xl tracking-wide sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight">
           Defy <span className="text-primary">25</span> Memories
         </h2>
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed">

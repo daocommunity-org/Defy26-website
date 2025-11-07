@@ -50,7 +50,7 @@ const FaqItemComponent: React.FC<{
 
   return (
     <div
-      className="faq-item"
+      className="faq-item tracking-wider"
       data-open={isOpen}
       role="button"
       tabIndex={0}

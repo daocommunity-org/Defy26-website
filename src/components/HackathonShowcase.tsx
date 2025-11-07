@@ -54,8 +54,10 @@ export function DefyInfoSection() {
     <section className="px-4 py-20 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-card/10">
       <div className="mx-auto max-w-4xl">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-4xl font-bold tracking-tight">
-            <span className="text-balance">Everything About Defy 26</span>
+          <h2 className="mb-4 text-4xl font-bold tracking-wider">
+            <span className="text-balance">
+              Everything About<span className="text-primary"> Defy 26</span>
+            </span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Get all the information you need to understand and join our

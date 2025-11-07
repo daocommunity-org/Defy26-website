@@ -193,7 +193,7 @@ export default function Home() {
             className="bg-background px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 text-foreground min-h-screen flex flex-col justify-center"
           >
             <ContainerAnimated className="space-y-4 md:space-y-6 text-center max-w-5xl mx-auto px-4 flex-1 flex flex-col justify-center">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tighter leading-tight">
+              <h1 className="text-3xl sm:text-4xl tracking-wide md:text-5xl lg:text-6xl xl:text-7xl font-bold  leading-tight">
                 Defy <span className="text-primary"> The Limits </span>
               </h1>
               <p className="mx-auto max-w-[42ch] text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground mb-4 sm:mb-6 md:mb-8">
@@ -276,7 +276,7 @@ export default function Home() {
           Community Sponsors
           <span className="absolute -bottom-2 md:-bottom-4 left-1/2 h-1 w-12 md:w-20 -translate-x-1/2 rounded-full bg-primary"></span>
         </h2>
-        <CommunitySponsors logos={communitySponsorLogos} columns={4}  />
+        <CommunitySponsors logos={communitySponsorLogos} columns={4} />
       </section>
 
       <section id="previous-sponsors" className="py-12 md:py-20 px-4">

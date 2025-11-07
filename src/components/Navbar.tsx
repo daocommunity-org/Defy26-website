@@ -14,7 +14,7 @@ const navItems = [
 
 const Navbar = () => {
   return (
-    <nav className="navbar-container">
+    <nav className="navbar-container tracking-wider">
       <NavBar items={navItems} />
     </nav>
   );
