@@ -23,11 +23,11 @@ export default function CountdownTimer() {
       const now = new Date();
       const currentYear = now.getFullYear();
 
-      // Target: November 1st at midnight
-      let targetDate = new Date(currentYear, 10, 1, 0, 0, 0, 0);
+      // Target: January 11th at midnight
+      let targetDate = new Date(currentYear, 0, 11, 0, 0, 0, 0);
 
       if (now > targetDate) {
-        targetDate = new Date(currentYear + 1, 10, 1, 0, 0, 0, 0);
+        targetDate = new Date(currentYear + 1, 0, 11, 0, 0, 0, 0);
       }
 
       const difference = targetDate.getTime() - now.getTime();
@@ -93,7 +93,7 @@ export default function CountdownTimer() {
               Time&apos;s Up! 🎉
             </h2>
             <p className="text-lg sm:text-xl text-muted-foreground">
-              November 1st has arrived!
+              January 11th has arrived!
             </p>
           </motion.div>
         ) : (
