@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Linkedin, Twitter } from "lucide-react";
 
 const tape = (
@@ -75,8 +76,45 @@ export const Footer = () => {
         </div>
       </div>
 
+      {/* Powered by Devfolio & ETHIndia */}
+      <div className="mt-6 flex justify-center items-center gap-3 text-sm text-gray-500">
+        <span className="text-gray-600">Powered by</span>
+        <div className="flex items-center gap-4">
+          <Link
+            href="https://devfolio.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center hover:opacity-80 transition-opacity"
+            aria-label="Devfolio"
+          >
+            <Image
+              src="/Devfolio/Devfolio_Logo-White@2x.png"
+              alt="Devfolio"
+              width={100}
+              height={30}
+              className="h-6 w-auto object-contain brightness-0 invert"
+            />
+          </Link>
+          <Link
+            href="https://ethindia.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center hover:opacity-80 transition-opacity"
+            aria-label="ETHIndia"
+          >
+            <Image
+              src="/Devfolio/ethindia-light.png"
+              alt="ETHIndia"
+              width={100}
+              height={30}
+              className="h-6 w-auto object-contain"
+            />
+          </Link>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
-      <div className="mt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+      <div className="mt-4 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
         <p>© {currentYear} Defy 26 Hackathon. All rights reserved.</p>
         <div className="flex items-center gap-4 mt-2 md:mt-0">
           <Link

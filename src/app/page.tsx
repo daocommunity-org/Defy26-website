@@ -18,8 +18,23 @@ import { LogoCloud } from "@/components/logo-cloud-2";
 import LogoLoop from "@/components/LogoLoop";
 import InteractiveSelector from "@/components/interactive-selector";
 import Defy25Memories from "@/components/Defy25Memories";
+import DevfolioApplyButton from "@/components/DevfolioApplyButton";
 
 const currentSponsorLogosForGrid = [
+  {
+    src: "/Devfolio/Devfolio_Logo-White@2x.png",
+    alt: "Devfolio",
+    href: "https://devfolio.co",
+    height: 80,
+    noInvert: true,
+  },
+  {
+    src: "/Devfolio/ethindia-light.png",
+    alt: "ETHIndia",
+    href: "https://ethindia.co",
+    height: 80,
+    noInvert: false,
+  },
   {
     src: "/CurrentSponsors/zkwalletlogo.png",
     alt: "ZKWallet",
@@ -123,6 +138,20 @@ const previousSponsorLogos = [
 
 const communitySponsorLogos = [
   {
+    id: 0,
+    name: "Devfolio",
+    src: "/Devfolio/Devfolio_Logo-White@2x.png",
+    alt: "Devfolio",
+    href: "https://devfolio.co",
+  },
+  {
+    id: 0.5,
+    name: "ETHIndia",
+    src: "/Devfolio/ethindia-light.png",
+    alt: "ETHIndia",
+    href: "https://ethindia.co",
+  },
+  {
     id: 1,
     name: "ZKWallet",
     src: "/Sponsors/zkwalletlogo.png",
@@ -214,9 +243,14 @@ export default function Home() {
               transition={{ delay: 0.4 }}
               outputRange={[-120, 0]}
               inputRange={[0, 0.7]}
-              className="mx-auto w-fit"
+              className="mx-auto w-fit flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
             >
               <GetStartedButton />
+              <DevfolioApplyButton 
+                hackathonSlug="defy-26" 
+                buttonTheme="light"
+                className="mx-auto sm:mx-0"
+              />
             </ContainerAnimated>
           </ContainerSticky>
         </ContainerScroll>

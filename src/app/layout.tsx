@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import { Analytics } from "@vercel/analytics/next";
 import ReactLenis from "lenis/react";
 import { Footer } from "@/components/footer-taped-design";
+import DevfolioStickyButton from "@/components/DevfolioStickyButton";
+import DevfolioScript from "@/components/DevfolioScript";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -49,6 +51,10 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        {/* Sticky Devfolio Apply Button */}
+        <DevfolioStickyButton />
+        {/* Devfolio SDK Script - loaded right before closing </body> tag as per documentation */}
+        <DevfolioScript />
       </body>
     </html>
   );
