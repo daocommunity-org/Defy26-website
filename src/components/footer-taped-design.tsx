@@ -89,7 +89,7 @@ export const Footer = () => {
           >
             <Image
               src="/Devfolio/Devfolio_Logo-White@2x.png"
-              alt="Devfolio"
+              alt="DEVFOLIO LOGO"
               width={100}
               height={30}
               className="h-6 w-auto object-contain brightness-0 invert"
@@ -104,7 +104,7 @@ export const Footer = () => {
           >
             <Image
               src="/Devfolio/ethindia-light.png"
-              alt="ETHIndia"
+              alt="ETHINDIA LOGO"
               width={100}
               height={30}
               className="h-6 w-auto object-contain"

@@ -23,14 +23,14 @@ import DevfolioApplyButton from "@/components/DevfolioApplyButton";
 const currentSponsorLogosForGrid = [
   {
     src: "/Devfolio/Devfolio_Logo-White@2x.png",
-    alt: "Devfolio",
+    alt: "DEVFOLIO LOGO",
     href: "https://devfolio.co",
     height: 80,
     noInvert: true,
   },
   {
     src: "/Devfolio/ethindia-light.png",
-    alt: "ETHIndia",
+    alt: "ETHINDIA LOGO",
     href: "https://ethindia.co",
     height: 80,
     noInvert: false,
@@ -141,14 +141,14 @@ const communitySponsorLogos = [
     id: 0,
     name: "Devfolio",
     src: "/Devfolio/Devfolio_Logo-White@2x.png",
-    alt: "Devfolio",
+    alt: "DEVFOLIO LOGO",
     href: "https://devfolio.co",
   },
   {
     id: 0.5,
     name: "ETHIndia",
     src: "/Devfolio/ethindia-light.png",
-    alt: "ETHIndia",
+    alt: "ETHINDIA LOGO",
     href: "https://ethindia.co",
   },
   {
