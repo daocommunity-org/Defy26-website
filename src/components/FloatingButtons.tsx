@@ -29,7 +29,7 @@ export default function FloatingButtons() {
         <>
           <Button asChild className="w-full sm:w-auto">
             <Link
-              href="https://defy.devfolio.co/"
+              href="https://defy-26.devfolio.co/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -40,7 +40,7 @@ export default function FloatingButtons() {
 
           <Button variant="secondary" asChild className="w-full sm:w-auto">
             <Link
-              href="https://discord.gg/daocommunity"
+              href="https://chat.whatsapp.com/LwsmHH7dfzN0FwPdknMyBV"
               target="_blank"
               rel="noopener noreferrer"
             >
