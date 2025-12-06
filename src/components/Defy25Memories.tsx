@@ -147,10 +147,12 @@ const Defy25Memories = () => {
         <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium mb-6 sm:mb-8">
           Ready to create new memories at Defy 26?
         </p>
-        <button className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-base sm:text-lg md:text-xl font-bold text-background bg-primary rounded-full shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
-          Register Now
-          <span className="absolute inset-0 rounded-full bg-primary/20 blur-xl group-hover:blur-2xl transition-all duration-300"></span>
-        </button>
+        <a href="https://defy-26.devfolio.co/overview">
+          <button className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-base sm:text-lg md:text-xl font-bold text-background bg-primary rounded-full shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
+            Register Now
+            <span className="absolute inset-0 rounded-full bg-primary/20 blur-xl group-hover:blur-2xl transition-all duration-300"></span>
+          </button>{" "}
+        </a>
       </div>
     </section>
   );
