@@ -246,11 +246,6 @@ export default function Home() {
               className="mx-auto w-fit flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
             >
               <GetStartedButton />
-              {/* `<DevfolioApplyButton 
-                hackathonSlug="defy-26" 
-                buttonTheme="light"
-                className="mx-auto sm:mx-0"
-              />` */}
             </ContainerAnimated>
           </ContainerSticky>
         </ContainerScroll>

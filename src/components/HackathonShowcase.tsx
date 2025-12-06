@@ -11,38 +11,38 @@ export function DefyInfoSection() {
   const infoData = {
     what: {
       icon: Zap,
-      title: "What is Defy 26?",
+      title: "What is DeFy'26?",
       description:
-        "Defy 26 is an innovative 48-hour hackathon where creative minds come together to build, innovate, and compete. It's a platform for developers, designers, and entrepreneurs to showcase their skills, collaborate with talented individuals, and create solutions that matter.",
+        "DeFy'26 is the third installment of an exhilarating 36-hour hackathon that brings together Web3 enthusiasts and aspiring entrepreneurs from colleges, all united in a quest for genuine innovation. Distinct from conventional collegiate hackathons that focus solely on coding technical solutions, DeFy'26 challenges participants to rethink the very concept of a hackathon. Here, the goal transcends mere programming; it is about disrupting norms and reimagining the future. DeFy'26 seeks to break down barriers by integrating technology with business insights, fostering the creation of Web3-powered startups that herald a new era where 'Decentralization' and 'Future Yield' coexist harmoniously.",
       highlights: [
-        "48-hour intensive coding marathon",
-        "Open to all skill levels",
-        "Multiple challenge categories",
-        "Access to mentors and resources",
+        "36-hour intensive hackathon",
+        "Web3 & entrepreneurship focused",
+        "Teams of 4-6 members only",
+        "Integrates technology with business insights",
       ],
     },
     who: {
       icon: Users,
       title: "Who Can Participate?",
       description:
-        "Defy 26 welcomes everyone! Whether you're a seasoned developer, a creative designer, a business-minded entrepreneur, or someone just starting their tech journey, there's a place for you.",
+        "DeFy'26 welcomes Web3 enthusiasts and aspiring entrepreneurs from colleges! Whether you're a developer, designer, or business-minded individual, come together in teams to create groundbreaking ideas that advance technology and reshape the landscape of entrepreneurship in the Web3 space.",
       highlights: [
-        "Students and professionals",
-        "Individual participants or teams",
-        "No experience requirement",
-        "Diverse backgrounds encouraged",
+        "College students and enthusiasts",
+        "Teams of 4-6 members required",
+        "Web3 enthusiasts & entrepreneurs",
+        "Diverse skill sets encouraged",
       ],
     },
     how: {
       icon: Clock,
-      title: "How Will It Happen?",
+      title: "How It Works",
       description:
-        "The hackathon follows a structured timeline to ensure everyone has the best experience. From kickoff to final presentations, every moment is designed for maximum impact and learning.",
+        "The hackathon follows a two-round structure. Round 1 involves PPT selection where you choose a track, finalize your project idea, and submit your PPT on Devfolio. Shortlisted teams advance to Round 2 - the grand showdown at VIT Chennai on 11th, 12th and 13th January 2026.",
       highlights: [
-        "Day 1: Kickoff & team formation",
-        "Day 2: Building & mentorship sessions",
-        "Day 3: Final submissions & judging",
-        "Closing ceremony & awards",
+        "Round 1: PPT submission on Devfolio",
+        "Round 2: 36-hour hackathon at VIT Chennai",
+        "Dates: 11th, 12th & 13th January 2026",
+        "Create team → Join members → Submit docs → Apply",
       ],
     },
   };
@@ -56,12 +56,11 @@ export function DefyInfoSection() {
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-4xl font-bold tracking-wider">
             <span className="text-balance">
-              Everything About<span className="text-primary"> Defy 26</span>
+              Defy<span className="text-primary"> The Limits</span>
             </span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Get all the information you need to understand and join our
-            hackathon
+            Get all the information you need to understand and join DeFy&apos;26
           </p>
         </div>
 

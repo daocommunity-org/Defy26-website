@@ -18,22 +18,19 @@ const InteractiveSelector = () => {
       {
         title: "Defi",
         description: "Build decentralized financial solutions",
-        image:
-          "https://images.unsplash.com/photo-1642104704074-5f70a0ae0d00?auto=format&fit=crop&w=800&q=80",
+        image: "defy-track.png",
         icon: <FaCode size={20} className="text-primary" />,
       },
       {
         title: "Public goods",
         description: "Create solutions for the community",
-        image:
-          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
+        image: "publicGoods.png",
         icon: <FaUsers size={20} className="text-primary" />,
       },
       {
         title: "Open Innovation",
         description: "Innovate without boundaries",
-        image:
-          "https://images.unsplash.com/photo-1639762681033-6461efb0efa8?auto=format&fit=crop&w=800&q=80",
+        image: "openInnovation.png",
         icon: <FaRocket size={20} className="text-primary" />,
       },
     ],
