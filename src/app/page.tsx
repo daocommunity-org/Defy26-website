@@ -233,8 +233,8 @@ export default function Home() {
 
             <ContainerInset className="max-h-[250px] sm:max-h-[350px] md:max-h-[400px] lg:max-h-[450px] w-full max-w-5xl mx-auto py-4 sm:py-6 px-4 flex items-center justify-center mb-4 sm:mb-6 md:mb-8">
               <HeroVideo
-                src="bg-video.mp4"
-                data-src="bg-video.mp4"
+                src="defy26trailer.mp4"
+                data-src="defy26trailer.mp4"
                 className="rounded-xl border-2 border-primary/20 shadow-2xl shadow-primary/10 w-full h-full object-cover"
               />
             </ContainerInset>
@@ -246,11 +246,11 @@ export default function Home() {
               className="mx-auto w-fit flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
             >
               <GetStartedButton />
-              <DevfolioApplyButton 
+              {/* `<DevfolioApplyButton 
                 hackathonSlug="defy-26" 
                 buttonTheme="light"
                 className="mx-auto sm:mx-0"
-              />
+              />` */}
             </ContainerAnimated>
           </ContainerSticky>
         </ContainerScroll>

@@ -16,39 +16,25 @@ const InteractiveSelector = () => {
   const options = useMemo(
     () => [
       {
-        title: "Code Track",
-        description: "Build innovative solutions",
+        title: "Defi",
+        description: "Build decentralized financial solutions",
         image:
-          "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1642104704074-5f70a0ae0d00?auto=format&fit=crop&w=800&q=80",
         icon: <FaCode size={20} className="text-primary" />,
       },
       {
-        title: "AI/ML Track",
-        description: "Machine learning innovations",
+        title: "Public goods",
+        description: "Create solutions for the community",
         image:
-          "https://images.unsplash.com/photo-1555255707-c07966088b7b?auto=format&fit=crop&w=800&q=80",
-        icon: <FaLaptopCode size={20} className="text-primary" />,
-      },
-      {
-        title: "Web3 Track",
-        description: "Blockchain & decentralization",
-        image:
-          "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
-        icon: <FaRocket size={20} className="text-primary" />,
-      },
-      {
-        title: "Design Track",
-        description: "Creative UI/UX solutions",
-        image:
-          "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=800&q=80",
-        icon: <FaTrophy size={20} className="text-primary" />,
-      },
-      {
-        title: "Open Track",
-        description: "Your wildest ideas",
-        image:
-          "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+          "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80",
         icon: <FaUsers size={20} className="text-primary" />,
+      },
+      {
+        title: "Open Innovation",
+        description: "Innovate without boundaries",
+        image:
+          "https://images.unsplash.com/photo-1639762681033-6461efb0efa8?auto=format&fit=crop&w=800&q=80",
+        icon: <FaRocket size={20} className="text-primary" />,
       },
     ],
     []
