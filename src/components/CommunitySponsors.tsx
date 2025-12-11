@@ -20,13 +20,14 @@ interface LogoColumnProps {
 function LogoColumn({ logos, columnIndex, currentTime }: LogoColumnProps) {
   const CYCLE_DURATION = 5000;
   const columnDelay = columnIndex * 200;
-  const adjustedTime = (currentTime + columnDelay) % (CYCLE_DURATION * logos.length);
+  const adjustedTime =
+    (currentTime + columnDelay) % (CYCLE_DURATION * logos.length);
   const currentIndex = Math.floor(adjustedTime / CYCLE_DURATION);
   const currentLogo = logos[currentIndex];
 
   return (
     <motion.div
-      className="relative h-[150px] w-[300px] overflow-hidden md:h-[200px] md:w-[400px]"
+      className="relative h-40 w-[320px] overflow-hidden md:h-[200px] md:w-[400px] lg:h-60 lg:w-[480px]"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -56,23 +57,38 @@ function LogoColumn({ logos, columnIndex, currentTime }: LogoColumnProps) {
           }}
         >
           {currentLogo.href ? (
-            <a href={currentLogo.href} target="_blank" rel="noopener noreferrer" className="flex h-full w-full items-center justify-center">
+            <a
+              href={currentLogo.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center justify-center h-full w-full p-2 rounded-lg transition-all duration-300 hover:outline-2 hover:outline-offset-40 hover:outline-primary/70"
+            >
               <Image
+                className={`mx-auto h-auto w-fit max-h-20 max-w-[200px] object-contain sm:max-h-[100px] sm:max-w-60 transition-transform duration-300 group-hover:scale-105`}
                 src={currentLogo.src}
                 alt={currentLogo.name}
-                width={120}
-                height={40}
-                className="h-auto w-auto max-h-[80%] max-w-[80%] object-contain"
+                height={80}
+                width={240}
+                style={{ objectFit: "contain" }}
               />
+              <span className="text-lg font-semibold text-center text-foreground px-2">
+                {currentLogo.name}
+              </span>
             </a>
           ) : (
-            <Image
-              src={currentLogo.src}
-              alt={currentLogo.name}
-              width={120}
-              height={40}
-              className="h-auto w-auto max-h-[80%] max-w-[80%] object-contain"
-            />
+            <div className="group flex flex-col items-center justify-center h-full w-full p-2 rounded-lg transition-all duration-300 hover:outline-2 hover:outline-offset-40 hover:outline-primary/70">
+              <Image
+                className={`mx-auto h-auto w-fit max-h-20 max-w-[200px] object-contain sm:max-h-[100px] sm:max-w-60 transition-transform duration-300 group-hover:scale-105`}
+                src={currentLogo.src}
+                alt={currentLogo.name}
+                height={80}
+                width={240}
+                style={{ objectFit: "contain" }}
+              />
+              <span className="text-lg font-semibold text-center text-foreground px-2">
+                {currentLogo.name}
+              </span>
+            </div>
           )}
         </motion.div>
       </AnimatePresence>
@@ -122,7 +138,7 @@ function CommunitySponsors({ columns = 2, logos }: LogoCarouselProps) {
   }, []);
 
   return (
-    <div className="flex justify-center gap-4 py-8">
+    <div className="flex justify-center gap-2 py-4">
       {logoColumns.map((columnLogos, index) => (
         <LogoColumn
           key={index}

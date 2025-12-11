@@ -1,49 +1,42 @@
 "use client";
 import React from "react";
 import DomeGallery from "./DomeGallery";
+import Button from "./ui/discover-button";
 
 const Defy25Memories = () => {
-  // Placeholder images for Defy 25 memories
+  // Images from Defy25 folder
   const defy25Images = [
     {
-      src: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80",
-      alt: "Defy 25 Hackathon Opening Ceremony",
+      src: "/Defy25/0efb019d-535a-494b-8608-40e59e96cf72-min.jpg",
+      alt: "Defy 25 Memory 1",
     },
     {
-      src: "https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=800&q=80",
-      alt: "Teams Coding Together",
+      src: "/Defy25/7e5d0f67-4d38-4d3a-af77-681392e341cc-min.jpg",
+      alt: "Defy 25 Memory 2",
     },
     {
-      src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=800&q=80",
-      alt: "Mentorship Sessions",
+      src: "/Defy25/859465df-f7fb-4aa9-9f76-cee828935542-min.jpg",
+      alt: "Defy 25 Memory 3",
     },
     {
-      src: "https://images.unsplash.com/photo-1515169067868-5387ec356754?auto=format&fit=crop&w=800&q=80",
-      alt: "Project Presentations",
+      src: "/Defy25/DSC_0626-min.JPG",
+      alt: "Defy 25 Memory 4",
     },
     {
-      src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-      alt: "Team Collaboration",
+      src: "/Defy25/DSC_0657-min.JPG",
+      alt: "Defy 25 Memory 5",
     },
     {
-      src: "https://images.unsplash.com/photo-1559223607-a43c990c428a?auto=format&fit=crop&w=800&q=80",
-      alt: "Winners Announcement",
+      src: "/Defy25/DSC_0676-min.JPG",
+      alt: "Defy 25 Memory 6",
     },
     {
-      src: "https://images.unsplash.com/photo-1551818255-e6e10975bc17?auto=format&fit=crop&w=800&q=80",
-      alt: "Networking Sessions",
+      src: "/Defy25/DSC_0716-min.JPG",
+      alt: "Defy 25 Memory 7",
     },
     {
-      src: "https://images.unsplash.com/photo-1528901166007-3784c7dd3653?auto=format&fit=crop&w=800&q=80",
-      alt: "Workshop Activities",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
-      alt: "Closing Ceremony",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1499159058454-75067059248a?auto=format&fit=crop&w=800&q=80",
-      alt: "Happy Participants",
+      src: "/Defy25/DSC_0732-min.JPG",
+      alt: "Defy 25 Memory 8",
     },
   ];
 
@@ -54,7 +47,7 @@ const Defy25Memories = () => {
 
       {/* Header Section */}
       <div className="relative z-10 w-full max-w-6xl mx-auto mb-12 sm:mb-16 md:mb-20 text-center">
-        <h2 className="text-4xl tracking-wide sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight">
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-foreground mb-4 sm:mb-6 tracking-tight">
           Defy <span className="text-primary">25</span> Memories
         </h2>
         <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground font-medium max-w-3xl mx-auto leading-relaxed">
@@ -114,9 +107,17 @@ const Defy25Memories = () => {
 
       {/* Gallery Section */}
       <div className="relative z-10 w-full mx-auto">
-        <div className="relative w-full h-[70vh] sm:h-[75vh] md:h-[80vh] lg:h-[85vh] rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10">
+        <div className="relative w-full h-[60vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 transform-gpu">
           {/* Gallery Container - Optimized for smooth performance */}
-          <DomeGallery images={defy25Images} />
+          <DomeGallery
+            images={defy25Images}
+            segments={20}
+            dragSensitivity={15}
+            dragDampening={3}
+            maxVerticalRotationDeg={3}
+            enlargeTransitionMs={200}
+            grayscale={false}
+          />
 
           {/* Instruction overlay */}
           <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-9999 pointer-events-none">
@@ -147,11 +148,11 @@ const Defy25Memories = () => {
         <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground font-medium mb-6 sm:mb-8">
           Ready to create new memories at Defy 26?
         </p>
-        <a href="https://defy-26.devfolio.co/overview">
-          <button className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-base sm:text-lg md:text-xl font-bold text-background bg-primary rounded-full shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 transition-all duration-300 hover:scale-105">
-            Register Now
-            <span className="absolute inset-0 rounded-full bg-primary/20 blur-xl group-hover:blur-2xl transition-all duration-300"></span>
-          </button>{" "}
+        <a
+          href="https://defy-26.devfolio.co/overview"
+          className="block mx-auto w-fit"
+        >
+          <Button />
         </a>
       </div>
     </section>

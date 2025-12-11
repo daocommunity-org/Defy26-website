@@ -799,6 +799,10 @@ export default function DomeGallery({
     .sphere-root[data-enlarging="true"] .scrim {
       opacity: 1 !important;
       pointer-events: all !important;
+      margin: calc(var(--viewer-pad) * -1) !important;
+      padding: var(--viewer-pad) !important;
+      width: calc(100% + var(--viewer-pad) * 2) !important;
+      height: calc(100% + var(--viewer-pad) * 2) !important;
     }
     
     @media (max-aspect-ratio: 1/1) {

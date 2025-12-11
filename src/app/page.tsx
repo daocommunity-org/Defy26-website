@@ -14,20 +14,13 @@ import CommunitySponsors from "@/components/CommunitySponsors";
 // 🎯 Import the new CountdownTimer component (assuming it's in components/)
 import CountdownTimer from "@/components/timercountdown";
 import { DefyInfoSection } from "@/components/HackathonShowcase";
-import { LogoCloud } from "@/components/logo-cloud-2";
 import LogoLoop from "@/components/LogoLoop";
 import InteractiveSelector from "@/components/interactive-selector";
 import Defy25Memories from "@/components/Defy25Memories";
 import DevfolioApplyButton from "@/components/DevfolioApplyButton";
+import { cn } from "@/lib/utils";
 
 const currentSponsorLogosForGrid = [
-  {
-    src: "/Devfolio/Devfolio_Logo-White@2x.png",
-    alt: "DEVFOLIO LOGO",
-    href: "https://devfolio.co",
-    height: 80,
-    noInvert: true,
-  },
   {
     src: "/Devfolio/ethindia-light.png",
     alt: "ETHINDIA LOGO",
@@ -36,58 +29,9 @@ const currentSponsorLogosForGrid = [
     noInvert: false,
   },
   {
-    src: "/CurrentSponsors/zkwalletlogo.png",
-    alt: "ZKWallet",
-    href: "https://zkinnovations.com",
-    height: 80,
-    noInvert: false,
-  },
-  {
-    src: "/CurrentSponsors/gizmolablogo.png",
-    alt: "Gizmolab",
-    href: "https://www.gizmolab.io",
-    height: 80,
-    noInvert: false,
-  },
-  {
-    src: "/CurrentSponsors/mtutorlogo.png",
-    alt: "MTutor",
-    href: "https://www.m-tutor.com/",
-    height: 90,
-    noInvert: false,
-  },
-  {
-    src: "/CurrentSponsors/moilogo.png",
-    alt: "MOI Technology",
-    href: "https://moi.technology/",
-    height: 80,
-    noInvert: true,
-  },
-  {
-    src: "/CurrentSponsors/krypcorelogo.png",
-    alt: "Krypcore",
-    href: "https:krypcore.com",
-    height: 80,
-    noInvert: false,
-  },
-  {
-    src: "/CurrentSponsors/qoneqtlogo.png",
-    alt: "Qoneqt",
-    href: "https://qoneqt.com",
-    height: 80,
-    noInvert: false,
-  },
-  {
-    src: "/CurrentSponsors/quicknodelogo.png",
-    alt: "QuickNode",
-    href: "https://www.quicknode.com/",
-    height: 80,
-    noInvert: false,
-  },
-  {
-    src: "/CurrentSponsors/quilauditslogo.png",
-    alt: "Quillaudits",
-    href: "https://www.quillaudits.com/smart-contract-audit",
+    src: "/thinkroot.png",
+    alt: "Think Root",
+    href: "https://thinkroot.in",
     height: 80,
     noInvert: false,
   },
@@ -139,73 +83,10 @@ const previousSponsorLogos = [
 const communitySponsorLogos = [
   {
     id: 0,
-    name: "Devfolio",
-    src: "/Devfolio/Devfolio_Logo-White@2x.png",
-    alt: "DEVFOLIO LOGO",
-    href: "https://devfolio.co",
-  },
-  {
-    id: 0.5,
-    name: "ETHIndia",
-    src: "/Devfolio/ethindia-light.png",
-    alt: "ETHINDIA LOGO",
-    href: "https://ethindia.co",
-  },
-  {
-    id: 1,
-    name: "ZKWallet",
-    src: "/Sponsors/zkwalletlogo.png",
-    alt: "ZKWallet",
-    href: "https://zkinnovations.com",
-  },
-  {
-    id: 2,
-    name: "Gizmolab",
-    src: "/Sponsors/gizmolablogo.png",
-    alt: "Gizmolab",
-    href: "https://www.gizmolab.io",
-  },
-  {
-    id: 3,
-    name: "MTutor",
-    src: "/Sponsors/mtutorlogo.png",
-    alt: "MTutor",
-    href: "https://www.m-tutor.com/",
-  },
-  {
-    id: 4,
-    name: "MOI Technology",
-    src: "/Sponsors/moilogo.png",
-    alt: "MOI Technology",
-    href: "https://moi.technology/",
-  },
-  {
-    id: 5,
-    name: "Krypcore",
-    src: "/Sponsors/krypcorelogo.png",
-    alt: "Krypcore",
-    href: "https:krypcore.com",
-  },
-  {
-    id: 6,
-    name: "Qoneqt",
-    src: "/Sponsors/qoneqtlogo.png",
-    alt: "Qoneqt",
-    href: "https://qoneqt.com",
-  },
-  {
-    id: 7,
-    name: "QuickNode",
-    src: "/Sponsors/quicknodelogo.png",
-    alt: "QuickNode",
-    href: "https://www.quicknode.com/",
-  },
-  {
-    id: 8,
-    name: "Quillaudits",
-    src: "/Sponsors/quilauditslogo.png",
-    alt: "Quillaudits",
-    href: "https://www.quillaudits.com/smart-contract-audit",
+    name: "Odisha DAO",
+    src: "/odishadao.png",
+    alt: "Odisha DAO",
+    href: "/",
   },
 ];
 
@@ -281,31 +162,45 @@ export default function Home() {
         <RadialOrbitalTimeline />
       </section>
 
-      <section id="current-sponsors" className="py-12 md:py-20 px-4">
-        <h2 className="relative mb-8 md:mb-16 text-center text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wider text-primary">
+      <section id="current-sponsors" className="py-12 md:py-16 px-4">
+        <h2 className="relative mb-12 md:mb-16 text-center text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wider text-primary">
           Current Sponsors
-          <span className="absolute -bottom-2 md:-bottom-4 left-1/2 h-1 w-12 md:w-20 -translate-x-1/2 rounded-full bg-primary"></span>
+          <span className="absolute -bottom-3 md:-bottom-4 left-1/2 h-1 w-16 md:w-24 -translate-x-1/2 rounded-full bg-gradient-to-r from-transparent via-primary to-transparent"></span>
         </h2>
-        <div className="mx-auto max-w-6xl">
-          <LogoCloud
-            className="rounded-lg overflow-hidden border border-primary/30 mb-10"
-            logos={currentSponsorLogosForGrid.map((logo) => ({
-              src: logo.src,
-              alt: logo.alt,
-              href: logo.href,
-              height: logo.height,
-              noInvert: logo.noInvert,
-            }))}
-          />
+
+        <div className="mx-auto max-w-4xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {currentSponsorLogosForGrid.map((logo, index) => (
+              <a
+                key={index}
+                href={logo.href}
+                className="block p-8 md:p-10 rounded-2xl border border-primary/20 bg-card/30 backdrop-blur-sm transition-all duration-300 hover:bg-card/60 hover:border-primary/40 hover:shadow-md"
+              >
+                <div className="flex items-center justify-center h-20 md:h-24">
+                  <img
+                    src={logo.src}
+                    alt={logo.alt}
+                    className={cn(
+                      "h-full w-auto object-contain transition-all duration-300",
+                      logo.noInvert
+                        ? ""
+                        : "filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0"
+                    )}
+                    style={{ height: logo.height || 80 }}
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section id="community-sponsors" className="py-12 md:py-20 px-4">
-        <h2 className="relative mb-8 md:mb-16 text-center text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-wider text-primary">
+      <section id="community-sponsors" className="py-5 md:py- px-4">
+        <h2 className="relative mb-12 md:mb-20 text-center text-4xl sm:text-5xl md:text-6xl font-bold uppercase tracking-wider text-primary">
           Community Sponsors
-          <span className="absolute -bottom-2 md:-bottom-4 left-1/2 h-1 w-12 md:w-20 -translate-x-1/2 rounded-full bg-primary"></span>
+          <span className="absolute -bottom-3 md:-bottom-4 left-1/2 h-1 w-16 md:w-24 -translate-x-1/2 rounded-full bg-primary"></span>
         </h2>
-        <CommunitySponsors logos={communitySponsorLogos} columns={4} />
+        <CommunitySponsors logos={communitySponsorLogos} columns={1} />
       </section>
 
       <section id="previous-sponsors" className="py-12 md:py-20 px-4">
