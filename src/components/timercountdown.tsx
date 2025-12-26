@@ -23,11 +23,11 @@ export default function CountdownTimer() {
       const now = new Date();
       const currentYear = now.getFullYear();
 
-      // Target: January 12th at 08:30 AM
-      let targetDate = new Date(currentYear, 0, 12, 8, 30, 0, 0);
+      // Target: January 12th at 09:00 AM
+      let targetDate = new Date(currentYear, 0, 12, 9, 0, 0, 0);
 
       if (now > targetDate) {
-        targetDate = new Date(currentYear + 1, 0, 12, 8, 30, 0, 0);
+        targetDate = new Date(currentYear + 1, 0, 12, 9, 0, 0, 0);
       }
 
       const difference = targetDate.getTime() - now.getTime();

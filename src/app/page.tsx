@@ -2,6 +2,7 @@
 
 import { Faqs } from "@/components/Faqs";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
+import { Timeline } from "@/components/ui/timeline";
 import {
   ContainerAnimated,
   ContainerInset,
@@ -19,6 +20,88 @@ import InteractiveSelector from "@/components/interactive-selector";
 import Defy25Memories from "@/components/Defy25Memories";
 import DevfolioApplyButton from "@/components/DevfolioApplyButton";
 import { cn } from "@/lib/utils";
+
+const scheduleData = [
+  {
+    title: "12th January 2026 - Day 1",
+    content: (
+      <div className="space-y-4">
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">9:00 AM</span>
+          <span>Reporting</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">10:00 AM</span>
+          <span>Closing</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">11:00 AM</span>
+          <span>Speaker Session</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">11:30 AM - 12:45 PM</span>
+          <span>Lunch</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">12:50 PM - 1:30 PM</span>
+          <span>Speaker Session</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">1:30 PM</span>
+          <span>Hackathon Commences</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">7:30 PM - 9:00 PM</span>
+          <span>Dinner</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">9:00 PM - 10:30 PM</span>
+          <span>Student Evaluation (Internal)</span>
+        </div>
+      </div>
+    ),
+  },
+  {
+    title: "13th January 2026 - Day 2",
+    content: (
+      <div className="space-y-4">
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">11:30 AM - 1:00 PM</span>
+          <span>Senior Judge Evaluation</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">1:00 PM - 1:30 PM</span>
+          <span>Lunch</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">1:45 PM</span>
+          <span>Hackathon Ends / Results (Top 9 Teams)</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">2:00 PM - 2:45 PM</span>
+          <span>Pitching Round</span>
+        </div>
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-primary rounded-full"></div>
+          <span className="font-semibold">3:00 PM - 3:30 PM</span>
+          <span>Results</span>
+        </div>
+      </div>
+    ),
+  },
+];
 
 const currentSponsorLogosForGrid = [
   {
@@ -167,6 +250,19 @@ export default function Home() {
         className="min-h-[60vh] sm:min-h-[70vh] md:min-h-[80vh] lg:min-h-[90vh] flex items-center justify-center py-8 sm:py-12 md:py-16"
       >
         <RadialOrbitalTimeline />
+      </section>
+
+      {/* Detailed Event Schedule */}
+      <section
+        id="detailed-schedule"
+        className="py-16 md:py-24 bg-gradient-to-b from-background to-card/10"
+      >
+        <div className="max-w-7xl mx-auto px-4 md:px-8 lg:px-10">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-8 md:mb-12 text-center text-primary">
+            DETAILED SCHEDULE
+          </h2>
+          <Timeline data={scheduleData} />
+        </div>
       </section>
 
       <section id="current-sponsors" className="py-12 md:py-16 px-4">

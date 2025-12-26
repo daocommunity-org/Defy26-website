@@ -25,7 +25,7 @@ const timelineEvents = [
   {
     step: "Step 3",
     title: "HACKATHON STARTS",
-    date: "12th Jan 2026 (Mon) - 08:30 AM",
+    date: "12th Jan 2026 (Mon) - 09:00 AM",
     content:
       "Shortlisted teams arrive at VIT Chennai for the grand hackathon showdown. Let the coding begin!",
     image:
@@ -34,9 +34,9 @@ const timelineEvents = [
   {
     step: "Step 4",
     title: "HACKATHON ENDS",
-    date: "13th Jan 2026 (Tue) - 06:00 AM",
+    date: "13th Jan 2026 (Tue) - 03:30 PM",
     content:
-      "Final submissions, presentations, and judging. Top teams will present their prototypes and investor-ready pitch decks.",
+      "Final submissions, presentations, and judging. Results will be announced with top teams presenting their prototypes and investor-ready pitch decks.",
     image:
       "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2070&auto=format&fit=crop",
   },
