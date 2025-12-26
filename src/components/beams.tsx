@@ -9,7 +9,7 @@ import React, {
   ReactNode,
 } from "react";
 import * as THREE from "three";
-import { Canvas, useFrame, ThreeElements } from "@react-three/fiber";
+import { Canvas, useFrame, ThreeElements, useThree } from "@react-three/fiber";
 import { PerspectiveCamera } from "@react-three/drei";
 import { degToRad } from "three/src/math/MathUtils.js";
 
@@ -199,7 +199,7 @@ const createStackedPlanesBufferGeometry = (
 };
 
 const CanvasWrapper = ({ children }: { children: ReactNode }) => (
-  <Canvas dpr={[1, 2]} frameloop="always" className="w-full h-full relative">
+  <Canvas dpr={1} frameloop="demand" className="w-full h-full relative">
     {children}
   </Canvas>
 );
@@ -241,11 +241,21 @@ const NoisePlanes = forwardRef<THREE.Mesh, NoisePlanesProps>(
       [count, width, height]
     );
 
-    useFrame((_, delta) => {
-      if (meshRef.current?.material.uniforms.time) {
-        meshRef.current.material.uniforms.time.value += 0.1 * delta;
-      }
-    });
+    // Throttle shader time updates to reduce CPU/GPU load and only
+    // request renders when the uniform changes.
+    const { invalidate } = useThree();
+    React.useEffect(() => {
+      const fps = 30;
+      const interval = 1000 / fps;
+      const id = setInterval(() => {
+        if (meshRef.current?.material.uniforms.time) {
+          meshRef.current.material.uniforms.time.value += 0.1 * (1 / fps);
+          invalidate();
+        }
+      }, interval);
+
+      return () => clearInterval(id);
+    }, [invalidate]);
 
     return <mesh ref={meshRef} geometry={geometry} material={material} />;
   }

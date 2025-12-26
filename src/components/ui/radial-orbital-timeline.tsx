@@ -25,9 +25,9 @@ const timelineEvents = [
   {
     step: "Step 3",
     title: "HACKATHON STARTS",
-    date: "11th Jan 2026 (Sun) - 06:00 PM",
+    date: "12th Jan 2026 (Mon) - 08:30 AM",
     content:
-      "Shortlisted teams arrive at VIT Chennai for the grand 36-hour hackathon showdown. Let the coding begin!",
+      "Shortlisted teams arrive at VIT Chennai for the grand hackathon showdown. Let the coding begin!",
     image:
       "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
   },

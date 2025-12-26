@@ -1,42 +1,42 @@
 "use client";
 import React from "react";
-import DomeGallery from "./DomeGallery";
+import CircularGallery from "./CircularGallery";
 import Button from "./ui/discover-button";
 
 const Defy25Memories = () => {
   // Images from Defy25 folder
   const defy25Images = [
     {
-      src: "/Defy25/0efb019d-535a-494b-8608-40e59e96cf72-min.jpg",
-      alt: "Defy 25 Memory 1",
+      image: "/Defy25/0efb019d-535a-494b-8608-40e59e96cf72-min.jpg",
+      text: "",
     },
     {
-      src: "/Defy25/7e5d0f67-4d38-4d3a-af77-681392e341cc-min.jpg",
-      alt: "Defy 25 Memory 2",
+      image: "/Defy25/7e5d0f67-4d38-4d3a-af77-681392e341cc-min.jpg",
+      text: "",
     },
     {
-      src: "/Defy25/859465df-f7fb-4aa9-9f76-cee828935542-min.jpg",
-      alt: "Defy 25 Memory 3",
+      image: "/Defy25/859465df-f7fb-4aa9-9f76-cee828935542-min.jpg",
+      text: "",
     },
     {
-      src: "/Defy25/DSC_0626-min.JPG",
-      alt: "Defy 25 Memory 4",
+      image: "/Defy25/DSC_0626-min.JPG",
+      text: "",
     },
     {
-      src: "/Defy25/DSC_0657-min.JPG",
-      alt: "Defy 25 Memory 5",
+      image: "/Defy25/DSC_0657-min.JPG",
+      text: "",
     },
     {
-      src: "/Defy25/DSC_0676-min.JPG",
-      alt: "Defy 25 Memory 6",
+      image: "/Defy25/DSC_0676-min.JPG",
+      text: "",
     },
     {
-      src: "/Defy25/DSC_0716-min.JPG",
-      alt: "Defy 25 Memory 7",
+      image: "/Defy25/DSC_0716-min.JPG",
+      text: "",
     },
     {
-      src: "/Defy25/DSC_0732-min.JPG",
-      alt: "Defy 25 Memory 8",
+      image: "/Defy25/DSC_0732-min.JPG",
+      text: "",
     },
   ];
 
@@ -96,7 +96,7 @@ const Defy25Memories = () => {
 
           <div className="flex flex-col items-center p-4 sm:p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border">
             <div className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-primary mb-2">
-              $50K
+              1 Lakhs+
             </div>
             <div className="text-xs sm:text-sm md:text-base text-muted-foreground text-center">
               Prize Pool
@@ -109,14 +109,13 @@ const Defy25Memories = () => {
       <div className="relative z-10 w-full mx-auto">
         <div className="relative w-full h-[60vh] sm:h-[65vh] md:h-[70vh] lg:h-[75vh] rounded-2xl overflow-hidden border border-primary/20 shadow-2xl shadow-primary/10 transform-gpu">
           {/* Gallery Container - Optimized for smooth performance */}
-          <DomeGallery
-            images={defy25Images}
-            segments={20}
-            dragSensitivity={15}
-            dragDampening={3}
-            maxVerticalRotationDeg={3}
-            enlargeTransitionMs={200}
-            grayscale={false}
+          <CircularGallery
+            items={defy25Images}
+            bend={0}
+            textColor="#ffffff"
+            borderRadius={0.05}
+            scrollSpeed={2}
+            scrollEase={0.05}
           />
 
           {/* Instruction overlay */}
@@ -136,7 +135,7 @@ const Defy25Memories = () => {
                 />
               </svg>
               <span className="text-xs sm:text-sm md:text-base text-foreground font-medium">
-                Drag horizontally • Click to enlarge
+                Scroll
               </span>
             </div>
           </div>

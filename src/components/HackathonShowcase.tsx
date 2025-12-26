@@ -13,9 +13,9 @@ export function DefyInfoSection() {
       icon: Zap,
       title: "What is DeFy'26?",
       description:
-        "DeFy'26 is the third installment of an exhilarating 36-hour hackathon that brings together Web3 enthusiasts and aspiring entrepreneurs from colleges, all united in a quest for genuine innovation. Distinct from conventional collegiate hackathons that focus solely on coding technical solutions, DeFy'26 challenges participants to rethink the very concept of a hackathon. Here, the goal transcends mere programming; it is about disrupting norms and reimagining the future. DeFy'26 seeks to break down barriers by integrating technology with business insights, fostering the creation of Web3-powered startups that herald a new era where 'Decentralization' and 'Future Yield' coexist harmoniously.",
+        "DeFy'26 is the third installment of an exhilarating hackathon that brings together Web3 enthusiasts and aspiring entrepreneurs from colleges, all united in a quest for genuine innovation. Distinct from conventional collegiate hackathons that focus solely on coding technical solutions, DeFy'26 challenges participants to rethink the very concept of a hackathon. Here, the goal transcends mere programming; it is about disrupting norms and reimagining the future. DeFy'26 seeks to break down barriers by integrating technology with business insights, fostering the creation of Web3-powered startups that herald a new era where 'Decentralization' and 'Future Yield' coexist harmoniously.",
       highlights: [
-        "36-hour intensive hackathon",
+        "Intensive hackathon experience",
         "Web3 & entrepreneurship focused",
         "Teams of 4-6 members only",
         "Integrates technology with business insights",
@@ -37,11 +37,11 @@ export function DefyInfoSection() {
       icon: Clock,
       title: "How It Works",
       description:
-        "The hackathon follows a two-round structure. Round 1 involves PPT selection where you choose a track, finalize your project idea, and submit your PPT on Devfolio. Shortlisted teams advance to Round 2 - the grand showdown at VIT Chennai on 11th, 12th and 13th January 2026.",
+        "The hackathon follows a two-round structure. Round 1 involves PPT selection where you choose a track, finalize your project idea, and submit your PPT on Devfolio. Shortlisted teams advance to Round 2 - the grand showdown at VIT Chennai on 12th & 13th January 2026.",
       highlights: [
         "Round 1: PPT submission on Devfolio",
-        "Round 2: 36-hour hackathon at VIT Chennai",
-        "Dates: 11th, 12th & 13th January 2026",
+        "Round 2: Hackathon at VIT Chennai",
+        "Dates: 12th & 13th January 2026",
         "Create team → Join members → Submit docs → Apply",
       ],
     },
