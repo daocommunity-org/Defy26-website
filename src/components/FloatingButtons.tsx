@@ -38,6 +38,21 @@ export default function FloatingButtons() {
             </Link>
           </Button>
 
+          <Button
+            variant="default"
+            asChild
+            className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white border-green-600"
+          >
+            <Link
+              href="https://www.instagram.com/stories/defy.26/3796200381593409255?utm_source=ig_story_item_share&igsh=MWp2bTA1ODRleDl1MA=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Users className="mr-2 h-4 w-4" />
+              Shortlisted Teams
+            </Link>
+          </Button>
+
           <Button variant="secondary" asChild className="w-full sm:w-auto">
             <Link
               href="https://chat.whatsapp.com/LwsmHH7dfzN0FwPdknMyBV"

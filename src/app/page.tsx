@@ -202,7 +202,7 @@ const communitySponsorLogos = [
   },
   {
     id: 1,
-    name: "Community",
+    name: "",
     src: "/community.png",
     alt: "Community",
     href: "/",
@@ -310,7 +310,7 @@ export default function Home() {
           Community Sponsors
           <span className="absolute -bottom-3 md:-bottom-4 left-1/2 h-1 w-16 md:w-24 -translate-x-1/2 rounded-full bg-primary"></span>
         </h2>
-        <CommunitySponsors logos={communitySponsorLogos} columns={1} />
+        <CommunitySponsors />
       </section>
 
       <section id="previous-sponsors" className="py-12 md:py-20 px-4">
