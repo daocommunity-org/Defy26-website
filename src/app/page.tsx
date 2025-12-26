@@ -88,6 +88,13 @@ const communitySponsorLogos = [
     alt: "Odisha DAO",
     href: "/",
   },
+  {
+    id: 1,
+    name: "Community",
+    src: "/community.png",
+    alt: "Community",
+    href: "/",
+  },
 ];
 
 export default function Home() {
