@@ -3,6 +3,7 @@
 import { Faqs } from "@/components/Faqs";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { Timeline } from "@/components/ui/timeline";
+import { LogoCarousel } from "@/components/ui/logo-carousel";
 import {
   ContainerAnimated,
   ContainerInset,
@@ -100,6 +101,34 @@ const scheduleData = [
         </div>
       </div>
     ),
+  },
+];
+
+const currentSponsorLogos = [
+  {
+    id: 1,
+    name: "Devfolio",
+    src: "/CurrentSponsors/Devfolio_Logo-White@2x.png",
+  },
+  {
+    id: 2,
+    name: "ETHIndia",
+    src: "/CurrentSponsors/ethindia-light.png",
+  },
+  {
+    id: 3,
+    name: "InCo",
+    src: "/CurrentSponsors/inco-removebg-preview.png",
+  },
+  {
+    id: 4,
+    name: "ThinkRoot",
+    src: "/CurrentSponsors/thinkroot.png",
+  },
+  {
+    id: 5,
+    name: "Shardeum",
+    src: "/CurrentSponsors/Shardeum-removebg-preview.png",
   },
 ];
 
@@ -272,29 +301,7 @@ export default function Home() {
         </h2>
 
         <div className="mx-auto max-w-4xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-            {currentSponsorLogosForGrid.map((logo, index) => (
-              <a
-                key={index}
-                href={logo.href}
-                className="block p-8 md:p-10 rounded-2xl border border-primary/20 bg-card/30 backdrop-blur-sm transition-all duration-300 hover:bg-card/60 hover:border-primary/40 hover:shadow-md"
-              >
-                <div className="flex items-center justify-center h-20 md:h-24">
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className={cn(
-                      "h-full w-auto object-contain transition-all duration-300",
-                      logo.noInvert
-                        ? ""
-                        : "filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0"
-                    )}
-                    style={{ height: logo.height || 80 }}
-                  />
-                </div>
-              </a>
-            ))}
-          </div>
+          <LogoCarousel logos={currentSponsorLogos} columns={2} />
         </div>
       </section>
 
